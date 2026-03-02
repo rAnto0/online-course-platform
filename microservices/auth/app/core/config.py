@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = ""
     DATABASE_SYNC_URL: str = ""
     DATABASE_TEST_URL: str = ""
+    DEBUG: bool = False
     SECRET_KEY: str = ""
     ALGORITHM: str = ""
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 15
