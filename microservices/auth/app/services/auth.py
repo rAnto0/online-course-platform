@@ -10,6 +10,7 @@ from app.helpers.users import get_user_by_username, get_user_from_sub
 from app.helpers.tokens import get_current_token_payload
 from app.models.users import User
 from app.schemas.users import UserRead, UserCreate
+from app.events.publisher import publish_user_created
 
 
 class AuthService:
@@ -70,6 +71,8 @@ class AuthService:
         self.session.add(new_user)
         await self.session.commit()
         await self.session.refresh(new_user)
+
+        await publish_user_created(new_user)
 
         return new_user
 

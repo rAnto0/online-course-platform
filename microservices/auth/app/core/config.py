@@ -16,11 +16,16 @@ class Settings(BaseSettings):
     DATABASE_URL: str = ""
     DATABASE_SYNC_URL: str = ""
     DATABASE_TEST_URL: str = ""
+    SERVICE_NAME: str = "auth-service"
     DEBUG: bool = False
+    LOG_LEVEL: str = "INFO"
     SECRET_KEY: str = ""
     ALGORITHM: str = ""
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 15
     REFRESH_TOKEN_EXPIRE_DAYS: int = 30
+    ENABLE_EVENTS: bool = False
+    RABBITMQ_URL: str = ""
+    RABBITMQ_EXCHANGE: str = "auth.events"
     AUTH_JWT_KEYS: AuthJWT = AuthJWT()
 
     model_config = SettingsConfigDict(env_file=".env")
