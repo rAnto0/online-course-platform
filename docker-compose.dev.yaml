@@ -1,0 +1,16 @@
+services:
+  postgres:
+    ports:
+      - "5432:5432"
+
+  rabbitmq:
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  auth-service:
+    env_file:
+      - ./microservices/auth/.env.dev
+    volumes:
+      - ./microservices/auth:/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload

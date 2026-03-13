@@ -28,7 +28,5 @@ class Settings(BaseSettings):
     RABBITMQ_EXCHANGE: str = "auth.events"
     AUTH_JWT_KEYS: AuthJWT = AuthJWT()
 
-    model_config = SettingsConfigDict(env_file=".env")
-
 
 settings = Settings()
