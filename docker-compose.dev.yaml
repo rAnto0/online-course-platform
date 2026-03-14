@@ -14,3 +14,10 @@ services:
     volumes:
       - ./microservices/auth:/app
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  course-service:
+    env_file:
+      - ./microservices/course/.env.dev
+    volumes:
+      - ./microservices/course:/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8001 --reload
