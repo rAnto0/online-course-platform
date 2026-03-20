@@ -2,6 +2,7 @@ import logging
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Depends
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import text
 
@@ -40,6 +41,19 @@ async def lifespan(_: FastAPI):
 
 
 app = FastAPI(title="Auth service", lifespan=lifespan)
+
+origins = [o.strip() for o in settings.CORS_ORIGINS.split(",") if o.strip()]
+if not origins and settings.DEBUG:
+    origins = ["*"]
+if origins:
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=origins,
+        allow_credentials=False if origins == ["*"] else True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
 app.include_router(auth_router)
 
 
