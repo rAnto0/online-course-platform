@@ -1,11 +1,14 @@
 import logging
 from typing import Any
 
+from fastapi.security import OAuth2PasswordBearer
 import jwt
 
 from app.core.config import settings
 
 logger = logging.getLogger("app.core.security")
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl=settings.AUTH_TOKEN_URL)
 
 _public_key_cache: str | None = None
 

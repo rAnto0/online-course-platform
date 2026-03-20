@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     SECRET_KEY: str = ""
     ALGORITHM: str = ""
     AUTH_JWT_PUBLIC_KEY: Path = BASE_DIR / "core" / "certs" / "jwt-public.pem"
+    AUTH_TOKEN_URL: str = "http://localhost:8000/auth/login"
 
 
 settings = Settings()
