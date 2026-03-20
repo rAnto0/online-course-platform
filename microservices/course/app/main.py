@@ -9,6 +9,8 @@ from sqlalchemy import text
 from app.core.database import get_async_session, init_engine, dispose_engine
 from app.core.logging import setup_logging
 from app.core.security import load_public_key
+from app.routers.categories import router as categories_router
+from app.routers.courses import router as course_router
 
 setup_logging()
 logger = logging.getLogger("app.main")
@@ -30,6 +32,8 @@ async def lifespan(_: FastAPI):
 
 
 app = FastAPI(title="Course service", lifespan=lifespan)
+app.include_router(categories_router)
+app.include_router(course_router)
 
 
 @app.get("/")
