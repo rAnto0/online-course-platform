@@ -9,8 +9,10 @@ from sqlalchemy import text
 from app.core.database import get_async_session, init_engine, dispose_engine
 from app.core.logging import setup_logging
 from app.core.security import load_public_key
+from app.core.config import settings
 from app.routers.categories import router as categories_router
 from app.routers.courses import router as course_router
+from app.broker.rabbitmq import rabbitmq
 
 setup_logging()
 logger = logging.getLogger("app.main")
@@ -23,11 +25,27 @@ async def lifespan(_: FastAPI):
     load_public_key()
     logger.debug("Service startup: dependencies initialized")
 
+    if not settings.ENABLE_EVENTS:
+        logger.info("Events disabled")
+        yield
+        return
+    if not settings.RABBITMQ_URL:
+        logger.warning("RabbitMQ url is empty")
+        yield
+        return
+    try:
+        await rabbitmq.connect()
+    except Exception:
+        logger.exception("Failed to connect to RabbitMQ. Events publishing disabled.")
+        yield
+        return
+
     try:
         yield
     finally:
         logger.debug("Service shutdown: releasing resources")
         await dispose_engine()
+        await rabbitmq.close()
         logger.debug("Service shutdown: complete")
 
 
