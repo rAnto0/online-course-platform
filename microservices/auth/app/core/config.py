@@ -26,6 +26,8 @@ class Settings(BaseSettings):
     ENABLE_EVENTS: bool = False
     RABBITMQ_URL: str = ""
     RABBITMQ_EXCHANGE: str = "auth.events"
+    COURSE_EVENTS_EXCHANGE: str = "course.events"
+    COURSE_EVENTS_QUEUE: str = "auth.course.events"
     AUTH_JWT_KEYS: AuthJWT = AuthJWT()
     CORS_ORIGINS: str = ""
 

@@ -1,8 +1,8 @@
 import json
+import logging
 from typing import Optional
 
 import aio_pika
-import logging
 
 from app.core.config import settings
 
@@ -27,10 +27,7 @@ class RabbitMQ:
     async def close(self):
         if self.publisher_channel:
             await self.publisher_channel.close()
-        if (
-            self.consumer_channel
-            and self.consumer_channel is not self.publisher_channel
-        ):
+        if self.consumer_channel and self.consumer_channel is not self.publisher_channel:
             await self.consumer_channel.close()
         if self.connection:
             await self.connection.close()

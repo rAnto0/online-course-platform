@@ -9,7 +9,8 @@ from sqlalchemy import text
 from app.core.database import get_async_session
 from app.core.config import settings
 from app.core.logging import setup_logging
-from app.events.publisher import rabbitmq
+from app.broker.rabbitmq import rabbitmq
+from app.events.consumer import start_user_role_updated_consumer
 from app.routers.auth import router as auth_router
 
 setup_logging()
@@ -33,6 +34,11 @@ async def lifespan(_: FastAPI):
         logger.exception("Failed to connect to RabbitMQ. Events publishing disabled.")
         yield
         return
+
+    try:
+        await start_user_role_updated_consumer()
+    except Exception:
+        logger.exception("Failed to start events consumer. Role updates disabled.")
 
     try:
         yield

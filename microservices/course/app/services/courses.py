@@ -10,6 +10,7 @@ from app.core.database import get_async_session
 from app.models.categories import Category
 from app.models.course import Course, Lesson, Section
 from app.models.enums import CourseStatus
+from app.events.publisher import publish_course_published, publish_user_role_updated
 from app.schemas.courses import (
     CourseCreate,
     CourseUpdate,
@@ -58,6 +59,11 @@ class CourseService:
         user: dict[str, Any],
     ) -> Course:
         """Создаёт курс и возвращает созданную сущность."""
+        existing_courses = await self.session.scalar(
+            select(func.count())
+            .select_from(Course)
+            .where(Course.author_id == user["id"])
+        )
         if data.category_id is not None:
             await self._ensure_category_exists(category_id=data.category_id)
 
@@ -74,6 +80,13 @@ class CourseService:
         self.session.add(course)
         await self.session.commit()
         await self.session.refresh(course)
+
+        if existing_courses == 0 and user.get("role") == "student":
+            await publish_user_role_updated(
+                user_id=user["id"],
+                role="teacher",
+                course_id=course.id,
+            )
 
         return course
 
@@ -149,6 +162,7 @@ class CourseService:
             course.status = CourseStatus.PUBLISHED
             await self.session.commit()
             await self.session.refresh(course)
+            await publish_course_published(course)
         return course
 
     async def archive_course(self, course_id: UUID) -> Course:

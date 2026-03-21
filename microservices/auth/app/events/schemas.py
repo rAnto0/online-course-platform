@@ -10,3 +10,9 @@ class UserCreatedEvent(BaseModel):
     email: str
     role: UserRole
     created_at: datetime
+
+
+class UserRoleUpdatedEvent(BaseModel):
+    user_id: UUID
+    role: str
+    course_id: UUID
