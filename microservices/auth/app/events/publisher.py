@@ -1,13 +1,11 @@
 import logging
 
-from app.broker.rabbitmq import RabbitMQ
+from app.broker.rabbitmq import rabbitmq
 from app.core.config import settings
 from app.events.schemas import UserCreatedEvent
 from app.models.users import User
 
 logger = logging.getLogger("app.events.publisher")
-
-rabbitmq = RabbitMQ(settings.RABBITMQ_URL, settings.RABBITMQ_EXCHANGE)
 
 
 async def publish_user_created(user: User):
@@ -23,6 +21,7 @@ async def publish_user_created(user: User):
 
     try:
         await rabbitmq.publish(
+            exchange_name=settings.RABBITMQ_EXCHANGE,
             routing_key="user.created",
             message=event.model_dump(mode="json"),
         )
