@@ -27,6 +27,7 @@ class Settings(BaseSettings):
     RABBITMQ_URL: str = ""
     RABBITMQ_EXCHANGE: str = "auth.events"
     AUTH_JWT_KEYS: AuthJWT = AuthJWT()
+    CORS_ORIGINS: str = ""
 
 
 settings = Settings()

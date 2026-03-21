@@ -15,6 +15,7 @@ def create_access_token(
         "sub": str(user.id),
         "username": user.username,
         "email": user.email,
+        "role": user.role,
     }
 
     return create_jwt(
