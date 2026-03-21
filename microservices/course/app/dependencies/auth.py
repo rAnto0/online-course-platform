@@ -108,9 +108,8 @@ async def require_course_owner_or_admin(
     course_service: CourseService = Depends(get_course_service),
     user: dict = Depends(get_current_user),
 ) -> None:
-    # TODO: раскомментировать после внедрения RabbitMQ и обновления роли в auth сервисе
-    # if user["role"] not in ("teacher", "admin"):
-    #     raise HTTPException(403, "Недостаточно прав")
+    if user["role"] not in ("teacher", "admin"):
+        raise HTTPException(403, "Недостаточно прав")
 
     # проверяем, является ли пользователь админом или владельцем курса
     course = await course_service.get_course_or_404(course_id)
