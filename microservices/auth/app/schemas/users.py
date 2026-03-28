@@ -12,8 +12,8 @@ class UserBase(BaseModel):
         str, Field(..., min_length=3, max_length=50, description="Никнейм пользователя")
     ]
     email: Annotated[
-        EmailStr | None, Field(max_length=50, description="Email пользователя")
-    ] = None
+        EmailStr, Field(..., max_length=50, description="Email пользователя")
+    ]
 
     model_config = {"str_strip_whitespace": True}
 
