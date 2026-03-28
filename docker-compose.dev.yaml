@@ -21,3 +21,18 @@ services:
     volumes:
       - ./microservices/course:/app
     command: uvicorn app.main:app --host 0.0.0.0 --port 8001 --reload
+
+  api-gateway:
+    volumes:
+      - ./api-gateway:/etc/krakend
+
+  gateway-tests:
+    image: python:3.11-slim
+    working_dir: /app
+    volumes:
+      - ./api-gateway:/app
+    environment:
+      GATEWAY_BASE_URL: http://api-gateway:8080
+    depends_on:
+      - api-gateway
+    command: bash -lc "pip install -r requirements.txt && pytest"

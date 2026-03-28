@@ -1,0 +1,41 @@
+{{/*
+  Online Course Platform - KrakenD API Gateway
+  Описание: Основной конфигурационный файл шлюза
+  Поддерживаемые сервисы: auth, course
+*/}}
+{
+  "version": 3,
+  "name": "online-course-platform-gateway",
+  "port": 8080,
+  "timeout": "3s",
+  "cache_ttl": "1s",
+  "endpoints": [
+    {{/*
+      =======================
+      AUTH SERVICE ENDPOINTS
+      =======================
+    */}}
+    {{- range $index, $ep := .auth_endpoints.endpoints }}
+      {{- if eq $ep.type "secure" }}
+        {{ template "secure_endpoint.tmpl" (dict "jwt" $.jwt "endpoint_path" $ep.endpoint_path "method" $ep.method "backend_pattern" $ep.backend_pattern "host" $.urls.auth_service_host "is_collection" $ep.is_collection "input_query_strings" $ep.input_query_strings) }}
+      {{- else if eq $ep.type "unprotected" }}
+        {{ template "unprotected_endpoint.tmpl" (dict "endpoint_path" $ep.endpoint_path "method" $ep.method "backend_pattern" $ep.backend_pattern "host" $.urls.auth_service_host "is_collection" $ep.is_collection "input_query_strings" $ep.input_query_strings) }}
+      {{- end }}
+      {{- if lt $index (sub (len $.auth_endpoints.endpoints) 1) }},{{- end }}
+    {{- end }}
+    {{- if gt (len $.course_endpoints.endpoints) 0 }},{{- end }}
+    {{/*
+      ========================
+      COURSE SERVICE ENDPOINTS
+      ========================
+    */}}
+    {{- range $index, $ep := .course_endpoints.endpoints }}
+      {{- if eq $ep.type "secure" }}
+        {{ template "secure_endpoint.tmpl" (dict "jwt" $.jwt "endpoint_path" $ep.endpoint_path "method" $ep.method "backend_pattern" $ep.backend_pattern "host" $.urls.course_service_host "is_collection" $ep.is_collection "input_query_strings" $ep.input_query_strings) }}
+      {{- else if eq $ep.type "unprotected" }}
+        {{ template "unprotected_endpoint.tmpl" (dict "endpoint_path" $ep.endpoint_path "method" $ep.method "backend_pattern" $ep.backend_pattern "host" $.urls.course_service_host "is_collection" $ep.is_collection "input_query_strings" $ep.input_query_strings) }}
+      {{- end }}
+      {{- if lt $index (sub (len $.course_endpoints.endpoints) 1) }},{{- end }}
+    {{- end }}
+  ]
+}

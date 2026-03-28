@@ -6,6 +6,7 @@ from fastapi.security import OAuth2PasswordBearer
 from app.schemas.users import UserCreate, UserRead, TokenInfo
 from app.services import auth
 from app.helpers.tokens import create_access_refresh_tokens
+from app.helpers.jwks import build_jwks
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
@@ -78,3 +79,12 @@ async def me(
     )
 
     return user
+
+
+@router.get(
+    "/.well-known/jwks.json",
+    status_code=status.HTTP_200_OK,
+    summary="JWKS публичных ключей",
+)
+async def jwks():
+    return build_jwks()

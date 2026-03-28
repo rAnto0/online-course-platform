@@ -1,6 +1,6 @@
 COMPOSE_DEV = docker compose --env-file .env.dev -f docker-compose.yaml -f docker-compose.dev.yaml
 
-.PHONY: run-dev down-dev build-dev test test-auth auth-test-db test-course course-test-db
+.PHONY: run-dev down-dev build-dev test test-auth auth-test-db test-course course-test-db test-gateway
 
 run-dev:
 	$(COMPOSE_DEV) up -d $(ARGS)
@@ -12,6 +12,9 @@ build-dev:
 	$(COMPOSE_DEV) build $(ARGS)
 
 test: test-auth test-course
+
+test-gateway:
+	$(COMPOSE_DEV) run --rm gateway-tests
 
 test-auth: auth-test-db
 	$(COMPOSE_DEV) exec -T auth-service pytest

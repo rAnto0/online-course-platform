@@ -70,5 +70,17 @@ services:
       retries: 5
     restart: unless-stopped
 
+  api-gateway:
+    build:
+      context: ./api-gateway
+    depends_on:
+      auth-service:
+        condition: service_healthy
+      course-service:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
 volumes:
   postgres_data:

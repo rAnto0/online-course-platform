@@ -1,0 +1,30 @@
+{
+  "endpoint": "{{ .endpoint_path }}",
+  "method": "{{ .method }}",
+  {{- if .input_query_strings }}
+  "input_query_strings": [
+    {{- range $i, $q := .input_query_strings -}}
+    {{- if $i}}, {{- end }}"{{ $q }}"
+    {{- end }}
+  ],
+  {{- end }}
+  "input_headers": ["Authorization"],
+  "extra_config": {
+    "auth/validator": {
+      "alg": "{{ .jwt.alg }}",
+      "jwk_url": "{{ .jwt.jwk_url }}",
+      "cache": true,
+      "cache_duration": {{ .jwt.cache_duration }},
+      "disable_jwk_security": {{ .jwt.disable_jwk_security }}
+    }
+  },
+  "backend": [
+    {
+      "url_pattern": "{{ .backend_pattern }}",
+      {{- if .is_collection }}
+      "is_collection": true,
+      {{- end }}
+      "host": ["{{ .host }}"]
+    }
+  ]
+}

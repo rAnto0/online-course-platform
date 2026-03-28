@@ -1,0 +1,20 @@
+{
+  "endpoint": "{{ .endpoint_path }}",
+  "method": "{{ .method }}",
+  {{- if .input_query_strings }}
+  "input_query_strings": [
+    {{- range $i, $q := .input_query_strings -}}
+    {{- if $i}}, {{- end }}"{{ $q }}"
+    {{- end }}
+  ],
+  {{- end }}
+  "backend": [
+    {
+      "url_pattern": "{{ .backend_pattern }}",
+      {{- if .is_collection }}
+      "is_collection": true,
+      {{- end }}
+      "host": ["{{ .host }}"]
+    }
+  ]
+}

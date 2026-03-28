@@ -5,6 +5,7 @@ import bcrypt
 import jwt
 
 from .config import settings
+from app.helpers.jwks import get_current_kid
 
 TOKEN_TYPE_FIELD = "type"
 
@@ -38,7 +39,8 @@ def create_jwt(
     }
     jwt_payload.update(token_data)
 
-    return jwt.encode(jwt_payload, private_key, algorithm=algorithm)
+    headers = {"kid": get_current_kid()}
+    return jwt.encode(jwt_payload, private_key, algorithm=algorithm, headers=headers)
 
 
 def decode_jwt(
