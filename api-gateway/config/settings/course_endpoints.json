@@ -1,0 +1,150 @@
+{
+    "endpoints": [
+        {
+            "type": "unprotected",
+            "endpoint_path": "/categories",
+            "method": "GET",
+            "backend_pattern": "/categories",
+            "is_collection": true,
+            "input_query_strings": ["skip", "limit"]
+        },
+        {
+            "type": "unprotected",
+            "endpoint_path": "/categories/{category_id}",
+            "method": "GET",
+            "backend_pattern": "/categories/{category_id}"
+        },
+        {
+            "type": "unprotected",
+            "endpoint_path": "/categories/by-slug/{category_slug}",
+            "method": "GET",
+            "backend_pattern": "/categories/by-slug/{category_slug}"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/categories",
+            "method": "POST",
+            "backend_pattern": "/categories"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/categories/{category_id}",
+            "method": "PUT",
+            "backend_pattern": "/categories/{category_id}"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/categories/{category_id}",
+            "method": "DELETE",
+            "backend_pattern": "/categories/{category_id}"
+        },
+        {
+            "type": "unprotected",
+            "endpoint_path": "/courses",
+            "method": "GET",
+            "backend_pattern": "/courses",
+            "is_collection": true,
+            "input_query_strings": ["skip", "limit"]
+        },
+        {
+            "type": "unprotected",
+            "endpoint_path": "/courses/{course_id}",
+            "method": "GET",
+            "backend_pattern": "/courses/{course_id}"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/courses",
+            "method": "POST",
+            "backend_pattern": "/courses"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/courses/{course_id}",
+            "method": "PUT",
+            "backend_pattern": "/courses/{course_id}"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/courses/{course_id}/publish",
+            "method": "PATCH",
+            "backend_pattern": "/courses/{course_id}/publish"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/courses/{course_id}/archive",
+            "method": "PATCH",
+            "backend_pattern": "/courses/{course_id}/archive"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/courses/{course_id}",
+            "method": "DELETE",
+            "backend_pattern": "/courses/{course_id}"
+        },
+        {
+            "type": "unprotected",
+            "endpoint_path": "/courses/{course_id}/sections",
+            "method": "GET",
+            "backend_pattern": "/courses/{course_id}/sections",
+            "is_collection": true,
+            "input_query_strings": ["skip", "limit"]
+        },
+        {
+            "type": "unprotected",
+            "endpoint_path": "/courses/{course_id}/sections/{section_id}",
+            "method": "GET",
+            "backend_pattern": "/courses/{course_id}/sections/{section_id}"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/courses/{course_id}/sections",
+            "method": "POST",
+            "backend_pattern": "/courses/{course_id}/sections"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/courses/{course_id}/sections/{section_id}",
+            "method": "PUT",
+            "backend_pattern": "/courses/{course_id}/sections/{section_id}"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/courses/{course_id}/sections/{section_id}",
+            "method": "DELETE",
+            "backend_pattern": "/courses/{course_id}/sections/{section_id}"
+        },
+        {
+            "type": "unprotected",
+            "endpoint_path": "/courses/{course_id}/sections/{section_id}/lessons",
+            "method": "GET",
+            "backend_pattern": "/courses/{course_id}/sections/{section_id}/lessons",
+            "is_collection": true,
+            "input_query_strings": ["skip", "limit"]
+        },
+        {
+            "type": "unprotected",
+            "endpoint_path": "/courses/{course_id}/sections/{section_id}/lessons/{lesson_id}",
+            "method": "GET",
+            "backend_pattern": "/courses/{course_id}/sections/{section_id}/lessons/{lesson_id}"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/courses/{course_id}/sections/{section_id}/lessons",
+            "method": "POST",
+            "backend_pattern": "/courses/{course_id}/sections/{section_id}/lessons"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/courses/{course_id}/sections/{section_id}/lessons/{lesson_id}",
+            "method": "PUT",
+            "backend_pattern": "/courses/{course_id}/sections/{section_id}/lessons/{lesson_id}"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/courses/{course_id}/sections/{section_id}/lessons/{lesson_id}",
+            "method": "DELETE",
+            "backend_pattern": "/courses/{course_id}/sections/{section_id}/lessons/{lesson_id}"
+        }
+    ]
+}

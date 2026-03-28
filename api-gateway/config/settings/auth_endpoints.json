@@ -1,0 +1,34 @@
+{
+    "endpoints": [
+        {
+            "type": "unprotected",
+            "endpoint_path": "/auth/health",
+            "method": "GET",
+            "backend_pattern": "/health"
+        },
+        {
+            "type": "unprotected",
+            "endpoint_path": "/auth/login",
+            "method": "POST",
+            "backend_pattern": "/auth/login"
+        },
+        {
+            "type": "unprotected",
+            "endpoint_path": "/auth/register",
+            "method": "POST",
+            "backend_pattern": "/auth/register"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/auth/me",
+            "method": "GET",
+            "backend_pattern": "/auth/me"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/auth/refresh",
+            "method": "POST",
+            "backend_pattern": "/auth/refresh"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "jwk_url": "http://auth-service:8000/auth/.well-known/jwks.json",
+    "alg": "RS256",
+    "cache_duration": 3600,
+    "disable_jwk_security": true
+}
