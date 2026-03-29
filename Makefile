@@ -1,6 +1,6 @@
 COMPOSE_DEV = docker compose --env-file .env.dev -f docker-compose.yaml -f docker-compose.dev.yaml
 
-.PHONY: run-dev down-dev build-dev test test-auth auth-test-db test-course course-test-db test-gateway
+.PHONY: run-dev down-dev build-dev logs-dev test test-auth auth-test-db test-course course-test-db test-gateway
 
 run-dev:
 	$(COMPOSE_DEV) up -d $(ARGS)
@@ -10,6 +10,9 @@ down-dev:
 
 build-dev:
 	$(COMPOSE_DEV) build $(ARGS)
+
+logs-dev:
+	$(COMPOSE_DEV) logs $(SERVICE)
 
 test: test-auth test-course
 
