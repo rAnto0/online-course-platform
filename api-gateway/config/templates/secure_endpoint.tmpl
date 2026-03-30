@@ -8,14 +8,15 @@
     {{- end }}
   ],
   {{- end }}
-  "input_headers": ["Authorization"],
+  "input_headers": ["Authorization", "X-User-Id", "X-User-Role", "Content-Type", "Accept"],
   "extra_config": {
     "auth/validator": {
       "alg": "{{ .jwt.alg }}",
       "jwk_url": "{{ .jwt.jwk_url }}",
       "cache": true,
       "cache_duration": {{ .jwt.cache_duration }},
-      "disable_jwk_security": {{ .jwt.disable_jwk_security }}
+      "disable_jwk_security": {{ .jwt.disable_jwk_security }},
+      "propagate_claims": {{ .jwt.propagate_claims | toJson }}
     }
   },
   "backend": [

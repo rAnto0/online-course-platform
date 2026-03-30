@@ -2,5 +2,15 @@
     "jwk_url": "http://auth-service:8000/auth/.well-known/jwks.json",
     "alg": "RS256",
     "cache_duration": 3600,
-    "disable_jwk_security": true
+    "disable_jwk_security": true,
+    "propagate_claims": [
+        [
+            "sub",
+            "X-User-Id"
+        ],
+        [
+            "role",
+            "X-User-Role"
+        ]
+    ]
 }

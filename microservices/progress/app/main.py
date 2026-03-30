@@ -8,6 +8,7 @@ from sqlalchemy import text
 
 from app.core.database import get_async_session, init_engine, dispose_engine
 from app.core.logging import setup_logging
+from app.routers.progress import router as progress_router
 
 setup_logging()
 logger = logging.getLogger("app.main")
@@ -28,6 +29,7 @@ async def lifespan(_: FastAPI):
 
 
 app = FastAPI(title="Progress service", lifespan=lifespan)
+app.include_router(progress_router)
 
 
 @app.get("/")

@@ -1,0 +1,66 @@
+{
+    "endpoints": [
+        {
+            "type": "unprotected",
+            "endpoint_path": "/progress/health",
+            "method": "GET",
+            "backend_pattern": "/health"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/progress/enrollments",
+            "method": "POST",
+            "backend_pattern": "/progress/enrollments"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/progress/enrollments/{enrollment_id}",
+            "method": "GET",
+            "backend_pattern": "/progress/enrollments/{enrollment_id}"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/progress/enrollments/{enrollment_id}",
+            "method": "PATCH",
+            "backend_pattern": "/progress/enrollments/{enrollment_id}"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/progress/enrollments/by-user",
+            "method": "GET",
+            "backend_pattern": "/progress/enrollments/by-user",
+            "is_collection": true,
+            "input_query_strings": ["skip", "limit"]
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/progress/enrollments/by-course/{course_id}",
+            "method": "GET",
+            "backend_pattern": "/progress/enrollments/by-course/{course_id}"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/progress/course-progress/courses/{course_id}",
+            "method": "GET",
+            "backend_pattern": "/progress/course-progress/courses/{course_id}"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/progress/course-progress/courses/{course_id}",
+            "method": "PUT",
+            "backend_pattern": "/progress/course-progress/courses/{course_id}"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/progress/lesson-progress/lessons/{lesson_id}",
+            "method": "GET",
+            "backend_pattern": "/progress/lesson-progress/lessons/{lesson_id}"
+        },
+        {
+            "type": "secure",
+            "endpoint_path": "/progress/lesson-progress/lessons/{lesson_id}",
+            "method": "PUT",
+            "backend_pattern": "/progress/lesson-progress/lessons/{lesson_id}"
+        }
+    ]
+}
