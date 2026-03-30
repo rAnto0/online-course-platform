@@ -37,5 +37,19 @@
       {{- end }}
       {{- if lt $index (sub (len $.course_endpoints.endpoints) 1) }},{{- end }}
     {{- end }}
+    {{- if gt (len $.course_endpoints.endpoints) 0 }},{{- end }}
+    {{/*
+      ==========================
+      PROGRESS SERVICE ENDPOINTS
+      ==========================
+    */}}
+    {{- range $index, $ep := .progress_endpoints.endpoints }}
+      {{- if eq $ep.type "secure" }}
+        {{ template "secure_endpoint.tmpl" (dict "jwt" $.jwt "endpoint_path" $ep.endpoint_path "method" $ep.method "backend_pattern" $ep.backend_pattern "host" $.urls.progress_service_host "is_collection" $ep.is_collection "input_query_strings" $ep.input_query_strings) }}
+      {{- else if eq $ep.type "unprotected" }}
+        {{ template "unprotected_endpoint.tmpl" (dict "endpoint_path" $ep.endpoint_path "method" $ep.method "backend_pattern" $ep.backend_pattern "host" $.urls.progress_service_host "is_collection" $ep.is_collection "input_query_strings" $ep.input_query_strings) }}
+      {{- end }}
+      {{- if lt $index (sub (len $.progress_endpoints.endpoints) 1) }},{{- end }}
+    {{- end }}
   ]
 }
