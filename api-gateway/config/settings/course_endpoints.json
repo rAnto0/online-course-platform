@@ -4,7 +4,7 @@
             "type": "unprotected",
             "endpoint_path": "/categories",
             "method": "GET",
-            "backend_pattern": "/categories",
+            "backend_pattern": "/categories/",
             "is_collection": true,
             "input_query_strings": ["skip", "limit"]
         },
@@ -24,7 +24,7 @@
             "type": "secure",
             "endpoint_path": "/categories",
             "method": "POST",
-            "backend_pattern": "/categories"
+            "backend_pattern": "/categories/"
         },
         {
             "type": "secure",
@@ -42,7 +42,7 @@
             "type": "unprotected",
             "endpoint_path": "/courses",
             "method": "GET",
-            "backend_pattern": "/courses",
+            "backend_pattern": "/courses/",
             "is_collection": true,
             "input_query_strings": ["skip", "limit"]
         },
@@ -56,7 +56,7 @@
             "type": "secure",
             "endpoint_path": "/courses",
             "method": "POST",
-            "backend_pattern": "/courses"
+            "backend_pattern": "/courses/"
         },
         {
             "type": "secure",
