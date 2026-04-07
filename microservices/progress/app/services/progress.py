@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import datetime
 from typing import Sequence
 from uuid import UUID
 
@@ -90,7 +90,7 @@ class ProgressService:
             status=status_value,
         )
         if status_value == EnrollmentStatus.COMPLETED:
-            enrollment.completed_at = datetime.now(timezone.utc)
+            enrollment.completed_at = datetime.utcnow()
 
         self.session.add(enrollment)
         try:
@@ -117,7 +117,7 @@ class ProgressService:
             enrollment.status = update_data["status"]
             if enrollment.status == EnrollmentStatus.COMPLETED:
                 if enrollment.completed_at is None:
-                    enrollment.completed_at = datetime.now(timezone.utc)
+                    enrollment.completed_at = datetime.utcnow()
             else:
                 enrollment.completed_at = None
 
@@ -263,7 +263,7 @@ class ProgressService:
         return lesson_progress
 
     def _apply_lesson_status(self, lesson_progress: LessonProgress) -> None:
-        now = datetime.now(timezone.utc)
+        now = datetime.utcnow()
         if lesson_progress.status == LessonProgressStatus.NOT_STARTED:
             lesson_progress.started_at = None
             lesson_progress.completed_at = None

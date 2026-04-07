@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --text-heading: #1c2a39;
+  --text-body: #2f3d4c;
+  --text-muted: #5c6b7a;
+  --accent: #12344f;
+  --panel: #fffaf3;
+  --border: rgba(18, 52, 79, 0.16);
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  color: var(--text-body);
+  background: linear-gradient(140deg, #f6f0e6 0%, #f1f5f9 50%, #e7eef6 100%);
+  min-height: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Fraunces', serif;
+  color: var(--text-heading);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  color: var(--text-body);
+}
+
+a {
+  color: inherit;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

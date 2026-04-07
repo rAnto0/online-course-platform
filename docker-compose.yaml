@@ -105,5 +105,17 @@ services:
       - "8080:8080"
     restart: unless-stopped
 
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+      args:
+        VITE_API_BASE_URL: /api
+    depends_on:
+      - api-gateway
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+
 volumes:
   postgres_data:
