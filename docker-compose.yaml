@@ -11,7 +11,7 @@ services:
       POSTGRES_PROGRESS_DB: ${POSTGRES_PROGRESS_DB:-}
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./docker-init:/docker-entrypoint-initdb.d:ro
+      - ./scripts/docker-init/postgres:/docker-entrypoint-initdb.d:ro
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}" ]
       interval: 10s
