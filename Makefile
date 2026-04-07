@@ -1,6 +1,6 @@
 COMPOSE_DEV = docker compose --env-file .env.dev -f docker-compose.yaml -f docker-compose.dev.yaml
 
-.PHONY: run-dev down-dev build-dev logs-dev test test-auth auth-test-db test-course course-test-db test-gateway
+.PHONY: run-dev down-dev build-dev logs-dev test test-auth auth-test-db test-course course-test-db test-gateway env-init keys-init
 
 run-dev:
 	$(COMPOSE_DEV) up -d $(ARGS)
@@ -13,6 +13,12 @@ build-dev:
 
 logs-dev:
 	$(COMPOSE_DEV) logs $(SERVICE)
+
+env-init:
+	./scripts/init-env.sh
+
+keys-init:
+	./scripts/init-jwt-keys.sh
 
 test: test-auth test-course
 
