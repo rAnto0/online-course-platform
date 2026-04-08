@@ -3,6 +3,7 @@ set -euo pipefail
 
 bits=2048
 force=0
+regenerated=0
 
 usage() {
   cat <<'USAGE'
@@ -56,6 +57,7 @@ if [[ -f "$private_key" || -f "$public_key" ]]; then
     echo "Ничего не делаю. Запусти с --force для пересоздания."
   else
     rm -f "$private_key" "$public_key"
+    regenerated=1
   fi
 fi
 
@@ -65,11 +67,21 @@ if [[ ! -f "$private_key" || ! -f "$public_key" ]]; then
   openssl rsa -in "$private_key" -pubout -out "$public_key"
   chmod 600 "$private_key"
   chmod 644 "$public_key"
+  regenerated=1
 fi
 
-if [[ -f "$course_public_key" && "$force" -ne 1 ]]; then
-  echo "Публичный ключ уже есть в course: $course_public_key"
-  echo "Ничего не копирую. Запусти с --force для перезаписи."
+if [[ -f "$course_public_key" ]]; then
+  if [[ "$force" -eq 1 || "$regenerated" -eq 1 ]]; then
+    cp "$public_key" "$course_public_key"
+    chmod 644 "$course_public_key"
+    echo "Скопировал публичный ключ в course: $course_public_key"
+  elif ! cmp -s "$public_key" "$course_public_key"; then
+    cp "$public_key" "$course_public_key"
+    chmod 644 "$course_public_key"
+    echo "Публичный ключ в course обновлен: $course_public_key"
+  else
+    echo "Публичный ключ в course актуален: $course_public_key"
+  fi
 else
   cp "$public_key" "$course_public_key"
   chmod 644 "$course_public_key"
