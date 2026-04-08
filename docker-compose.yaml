@@ -93,7 +93,7 @@ services:
 
   api-gateway:
     build:
-      context: ./api-gateway
+      context: ./infra/api-gateway
     depends_on:
       auth-service:
         condition: service_healthy
@@ -108,7 +108,7 @@ services:
   nginx:
     build:
       context: .
-      dockerfile: nginx/Dockerfile
+      dockerfile: infra/nginx/Dockerfile
       args:
         VITE_API_BASE_URL: /api
     depends_on:

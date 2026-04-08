@@ -31,7 +31,7 @@ services:
 
   api-gateway:
     volumes:
-      - ./api-gateway:/etc/krakend
+      - ./infra/api-gateway:/etc/krakend
 
   frontend:
     build:
@@ -53,7 +53,7 @@ services:
 
   nginx:
     volumes:
-      - ./nginx/nginx.dev.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./infra/nginx/nginx.dev.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
       - api-gateway
       - frontend
@@ -64,7 +64,7 @@ services:
     image: python:3.11-slim
     working_dir: /app
     volumes:
-      - ./api-gateway:/app
+      - ./infra/api-gateway:/app
     environment:
       GATEWAY_BASE_URL: http://api-gateway:8080
     depends_on:

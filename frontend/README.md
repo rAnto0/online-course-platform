@@ -44,7 +44,7 @@ docker compose --env-file .env.dev -f docker-compose.yaml -f docker-compose.dev.
 
 ## Сборка в Docker (prod)
 
-В проде используется общий nginx в корне проекта, который отдаёт статику и проксирует `/api`:
+В проде используется общий nginx из `infra/nginx`, который отдаёт статику и проксирует `/api`:
 
 ```bash
 docker compose -f docker-compose.yaml up -d --build
