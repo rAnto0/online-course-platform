@@ -1,7 +1,11 @@
 COMPOSE_DEV = docker compose --env-file .env.dev -f docker-compose.yaml -f docker-compose.dev.yaml
+MIGRATE_SERVICES = auth-service course-service progress-service
 
-.PHONY: run-dev down-dev build-dev logs-dev test test-auth auth-test-db test-course course-test-db test-gateway env-init keys-init
+.PHONY: run-dev down-dev build-dev logs-dev shell-service-dev test test-auth auth-test-db test-course course-test-db test-gateway env-init keys-init migrate
 
+# ============
+# DEV COMMANDS
+# ============
 run-dev:
 	$(COMPOSE_DEV) up -d $(ARGS)
 
@@ -14,12 +18,31 @@ build-dev:
 logs-dev:
 	$(COMPOSE_DEV) logs $(SERVICE)
 
+shell-service-dev:
+	$(COMPOSE_DEV) exec -it $(SERVICE) sh -lc 'command -v bash >/dev/null 2>&1 && exec bash || exec sh'
+
+# =======
+# SCRIPTS
+# =======
 env-init:
 	./scripts/init-env.sh
 
 keys-init:
 	./scripts/init-jwt-keys.sh
 
+migrate:
+ifeq ($(SERVICE),)
+	@for svc in $(MIGRATE_SERVICES); do \
+		echo "Running migrations for $$svc..."; \
+		$(COMPOSE_DEV) exec -T $$svc alembic -c alembic.ini upgrade head; \
+	done
+else
+	$(COMPOSE_DEV) exec -T $(SERVICE) alembic -c alembic.ini upgrade head
+endif
+
+# =============
+# TEST COMMANDS
+# =============
 test: test-auth test-course
 
 test-gateway:
