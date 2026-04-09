@@ -322,10 +322,12 @@ function CategoryManager({ categories, setCategories }) {
   const [listError, setListError] = useState('')
   const [page, setPage] = useState(1)
   const perPage = 10
-  const [totalPages, setTotalPages] = useState(1)
-  const [fetchedCount, setFetchedCount] = useState(0)
-  const [pagedCategories, setPagedCategories] = useState([])
-  const hasNextPage = page < totalPages ? true : fetchedCount === perPage
+  const totalPages = Math.max(1, Math.ceil(categories.length / perPage))
+  const pagedCategories = useMemo(() => {
+    const start = (page - 1) * perPage
+    return categories.slice(start, start + perPage)
+  }, [categories, page])
+  const hasNextPage = page < totalPages
   const visiblePages = useMemo(() => {
     if (totalPages <= 5) {
       return Array.from({ length: totalPages }, (_, i) => i + 1)
@@ -347,10 +349,10 @@ function CategoryManager({ categories, setCategories }) {
         if (!mounted) return
         const all = normalizeCollection(categoriesData)
         setCategories(all)
-        setTotalPages(Math.max(1, Math.ceil(all.length / perPage)))
+        setListError('')
       } catch (err) {
         if (mounted) {
-          setTotalPages(1)
+          setListError(err.message || 'Не удалось загрузить категории.')
         }
       }
     }
@@ -361,50 +363,22 @@ function CategoryManager({ categories, setCategories }) {
   }, [setCategories])
 
   useEffect(() => {
-    let mounted = true
-    const loadPage = async () => {
-      try {
-        const categoriesData = await apiRequest(
-          `/categories?skip=${(page - 1) * perPage}&limit=${perPage}`,
-          { method: 'GET', auth: false },
-        )
-        if (!mounted) return
-        const normalized = normalizeCollection(categoriesData)
-        setPagedCategories(normalized)
-        setFetchedCount(normalized.length)
-        setListError('')
-      } catch (err) {
-        if (mounted) {
-          setListError(err.message || 'Не удалось загрузить категории.')
-        }
-      }
+    if (page > totalPages) {
+      setPage(totalPages)
     }
-    loadPage()
-    return () => {
-      mounted = false
-    }
-  }, [page])
+  }, [page, totalPages])
 
   const refreshTotals = async () => {
     try {
       const categoriesData = await apiRequest('/categories?skip=0&limit=10000', { method: 'GET', auth: false })
       const all = normalizeCollection(categoriesData)
       setCategories(all)
-      setTotalPages(Math.max(1, Math.ceil(all.length / perPage)))
+      setListError('')
       return all.length
     } catch (err) {
+      setListError(err.message || 'Не удалось загрузить категории.')
       return null
     }
-  }
-
-  const refreshPage = async (nextPage = page) => {
-    const categoriesData = await apiRequest(
-      `/categories?skip=${(nextPage - 1) * perPage}&limit=${perPage}`,
-      { method: 'GET', auth: false },
-    )
-    const normalized = normalizeCollection(categoriesData)
-    setPagedCategories(normalized)
-    setFetchedCount(normalized.length)
   }
 
   const handleSubmit = async (event) => {
@@ -422,7 +396,6 @@ function CategoryManager({ categories, setCategories }) {
       setStatus('idle')
       await refreshTotals()
       setPage(1)
-      await refreshPage(1)
     } catch (err) {
       setCreateError(err.message || 'Не удалось создать категорию.')
       setStatus('idle')
@@ -437,7 +410,6 @@ function CategoryManager({ categories, setCategories }) {
         body: { name },
       })
       setCategories((prev) => prev.map((cat) => (cat.id === categoryId ? updated : cat)))
-      setPagedCategories((prev) => prev.map((cat) => (cat.id === categoryId ? updated : cat)))
     } catch (err) {
       setListError(err.message || 'Не удалось обновить категорию.')
     }
@@ -446,13 +418,8 @@ function CategoryManager({ categories, setCategories }) {
   const deleteCategory = async (categoryId) => {
     setListError('')
     let snapshot = []
-    let pagedSnapshot = []
     setCategories((prev) => {
       snapshot = prev
-      return prev.filter((cat) => cat.id !== categoryId)
-    })
-    setPagedCategories((prev) => {
-      pagedSnapshot = prev
       return prev.filter((cat) => cat.id !== categoryId)
     })
     try {
@@ -460,21 +427,10 @@ function CategoryManager({ categories, setCategories }) {
         method: 'DELETE',
         auth: true,
       })
-      const total = await refreshTotals()
-      if (total !== null) {
-        const nextTotalPages = Math.max(1, Math.ceil(total / perPage))
-        const nextPage = Math.min(page, nextTotalPages)
-        if (nextPage !== page) {
-          setPage(nextPage)
-          await refreshPage(nextPage)
-        } else {
-          await refreshPage(nextPage)
-        }
-      }
+      await refreshTotals()
     } catch (err) {
       if (err?.status && err.status < 500) {
         setCategories(snapshot)
-        setPagedCategories(pagedSnapshot)
         setListError(err.message || 'Не удалось удалить категорию.')
       } else {
         console.warn('Delete category warning:', err)
