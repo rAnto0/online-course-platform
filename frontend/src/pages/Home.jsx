@@ -12,8 +12,6 @@ export default function Home() {
   const [categoryFilter, setCategoryFilter] = useState('all')
   const [page, setPage] = useState(1)
   const perPage = 9
-  const [fetchedCount, setFetchedCount] = useState(0)
-  const [totalPages, setTotalPages] = useState(1)
   const [totalCourses, setTotalCourses] = useState(0)
 
   const coursesWithPreview = useMemo(() => (
@@ -45,41 +43,16 @@ export default function Home() {
 
   useEffect(() => {
     let mounted = true
-    const loadTotal = async () => {
-      try {
-        const coursesData = await apiRequest('/courses?skip=0&limit=10000', { method: 'GET', auth: false })
-        if (!mounted) return
-        const allCourses = normalizeCollection(coursesData)
-        const publishedCount = allCourses.filter(
-          (course) => course.status !== 'DRAFT' && course.status !== 'ARCHIVED',
-        ).length
-        setTotalPages(Math.max(1, Math.ceil(publishedCount / perPage)))
-        setTotalCourses(publishedCount)
-      } catch (error) {
-        if (mounted) {
-          setTotalPages(1)
-          setTotalCourses(0)
-        }
-      }
-    }
-    loadTotal()
-    return () => {
-      mounted = false
-    }
-  }, [])
-
-  useEffect(() => {
-    let mounted = true
     const loadCourses = async () => {
       try {
-        const coursesData = await apiRequest(
-          `/courses?skip=${(page - 1) * perPage}&limit=${perPage}`,
-          { method: 'GET', auth: false },
-        )
+        const coursesData = await apiRequest('/courses?skip=0&limit=10000', { method: 'GET', auth: false })
         if (mounted) {
-          const normalized = normalizeCollection(coursesData)
-          setCourses(normalized)
-          setFetchedCount(normalized.length)
+          const allCourses = normalizeCollection(coursesData)
+          setCourses(allCourses)
+          const publishedCount = allCourses.filter(
+            (course) => course.status !== 'DRAFT' && course.status !== 'ARCHIVED',
+          ).length
+          setTotalCourses(publishedCount)
           setStatus('ready')
         }
       } catch (error) {
@@ -92,7 +65,7 @@ export default function Home() {
     return () => {
       mounted = false
     }
-  }, [page])
+  }, [])
 
   const filteredCourses = useMemo(() => {
     const needle = search.trim().toLowerCase()
@@ -108,7 +81,12 @@ export default function Home() {
     })
   }, [coursesWithPreview, search, categoryFilter])
 
-  const hasNextPage = page < totalPages ? true : fetchedCount === perPage
+  const totalPages = Math.max(1, Math.ceil(filteredCourses.length / perPage))
+  const pagedCourses = useMemo(() => {
+    const start = (page - 1) * perPage
+    return filteredCourses.slice(start, start + perPage)
+  }, [filteredCourses, page])
+  const hasNextPage = page < totalPages
   const visiblePages = useMemo(() => {
     if (totalPages <= 5) {
       return Array.from({ length: totalPages }, (_, i) => i + 1)
@@ -198,7 +176,7 @@ export default function Home() {
         )}
 
         <div className="grid">
-          {filteredCourses.map((course) => (
+          {pagedCourses.map((course) => (
             <article className="card" key={course.id}>
               <div className="card__header">
                 <div>
