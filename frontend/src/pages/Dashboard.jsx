@@ -22,6 +22,10 @@ export default function Dashboard() {
   const [courseStatus, setCourseStatus] = useState('idle')
   const [error, setError] = useState('')
   const [showCreateModal, setShowCreateModal] = useState(false)
+  const [adminCoursePage, setAdminCoursePage] = useState(1)
+  const adminCoursesPerPage = 10
+  const [enrollmentPage, setEnrollmentPage] = useState(1)
+  const enrollmentsPerPage = 10
 
   const isAdmin = user?.role === 'admin'
   const safeCategories = Array.isArray(categories) ? categories : []
@@ -82,6 +86,60 @@ export default function Dashboard() {
     if (user.role === 'admin') return courses
     return safeCourses.filter((course) => course.author_id === user.id)
   }, [safeCourses, user])
+
+  const enrollmentTotalPages = Math.max(1, Math.ceil(enrollments.length / enrollmentsPerPage))
+  const pagedEnrollments = useMemo(() => {
+    const start = (enrollmentPage - 1) * enrollmentsPerPage
+    return enrollments.slice(start, start + enrollmentsPerPage)
+  }, [enrollments, enrollmentPage])
+  const enrollmentHasNextPage = enrollmentPage < enrollmentTotalPages
+  const enrollmentVisiblePages = useMemo(() => {
+    if (enrollmentTotalPages <= 5) {
+      return Array.from({ length: enrollmentTotalPages }, (_, i) => i + 1)
+    }
+    let start = Math.max(1, enrollmentPage - 2)
+    let end = start + 4
+    if (end > enrollmentTotalPages) {
+      end = enrollmentTotalPages
+      start = Math.max(1, end - 4)
+    }
+    return Array.from({ length: end - start + 1 }, (_, i) => start + i)
+  }, [enrollmentTotalPages, enrollmentPage])
+
+  useEffect(() => {
+    if (enrollmentPage > enrollmentTotalPages) {
+      setEnrollmentPage(enrollmentTotalPages)
+    }
+  }, [enrollmentPage, enrollmentTotalPages])
+
+  const adminCourses = useMemo(() => (
+    user?.role === 'admin' ? myCourses : []
+  ), [myCourses, user])
+
+  const adminTotalPages = Math.max(1, Math.ceil(adminCourses.length / adminCoursesPerPage))
+  const adminPagedCourses = useMemo(() => {
+    const start = (adminCoursePage - 1) * adminCoursesPerPage
+    return adminCourses.slice(start, start + adminCoursesPerPage)
+  }, [adminCourses, adminCoursePage])
+  const adminHasNextPage = adminCoursePage < adminTotalPages
+  const adminVisiblePages = useMemo(() => {
+    if (adminTotalPages <= 5) {
+      return Array.from({ length: adminTotalPages }, (_, i) => i + 1)
+    }
+    let start = Math.max(1, adminCoursePage - 2)
+    let end = start + 4
+    if (end > adminTotalPages) {
+      end = adminTotalPages
+      start = Math.max(1, end - 4)
+    }
+    return Array.from({ length: end - start + 1 }, (_, i) => start + i)
+  }, [adminTotalPages, adminCoursePage])
+
+  useEffect(() => {
+    if (user?.role === 'admin' && adminCoursePage > adminTotalPages) {
+      setAdminCoursePage(adminTotalPages)
+    }
+  }, [adminCoursePage, adminTotalPages, user])
 
   const handleCourseChange = (event) => {
     const { name, value } = event.target
@@ -150,7 +208,7 @@ export default function Dashboard() {
             </div>
             <div className="panel__body">
               {myCourses.length === 0 && <div className="empty">Пока нет курсов.</div>}
-              {myCourses.map((course) => (
+              {(user?.role === 'admin' ? adminPagedCourses : myCourses).map((course) => (
                 <div className="list-row" key={course.id}>
                   <div>
                     <div className="list-row__title">
@@ -167,6 +225,43 @@ export default function Dashboard() {
                 </div>
               ))}
             </div>
+            {user?.role === 'admin' && (adminCoursePage > 1 || adminHasNextPage) && (
+              <div className="panel__footer">
+                <div className="pagination">
+                  <button
+                    className="button button--ghost"
+                    type="button"
+                    onClick={() => setAdminCoursePage((p) => Math.max(1, p - 1))}
+                    disabled={adminCoursePage === 1}
+                  >
+                    Назад
+                  </button>
+                  <div className="pagination__pages">
+                    {adminVisiblePages.map((p) => (
+                      <button
+                        key={p}
+                        className={`pagination__page ${p === adminCoursePage ? 'is-active' : ''}`}
+                        type="button"
+                        onClick={() => setAdminCoursePage(p)}
+                      >
+                        {p}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="pagination__info">
+                    Страница {adminCoursePage} из {adminTotalPages}
+                  </div>
+                  <button
+                    className="button button--ghost"
+                    type="button"
+                    onClick={() => setAdminCoursePage((p) => p + 1)}
+                    disabled={!adminHasNextPage}
+                  >
+                    Вперед
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </section>
       )}
@@ -277,7 +372,7 @@ export default function Dashboard() {
           <div className="panel panel--wide">
             <div className="panel__body">
               {enrollments.length === 0 && <div className="empty">Пока нет записей.</div>}
-              {enrollments.map((enrollment) => (
+              {pagedEnrollments.map((enrollment) => (
                 <div
                   className={`list-row ${enrollment.status === 'COMPLETED' ? 'list-row--completed' : ''}`}
                   key={enrollment.id}
@@ -304,6 +399,43 @@ export default function Dashboard() {
                 </div>
               ))}
             </div>
+            {(enrollmentPage > 1 || enrollmentHasNextPage) && (
+              <div className="panel__footer">
+                <div className="pagination">
+                  <button
+                    className="button button--ghost"
+                    type="button"
+                    onClick={() => setEnrollmentPage((p) => Math.max(1, p - 1))}
+                    disabled={enrollmentPage === 1}
+                  >
+                    Назад
+                  </button>
+                  <div className="pagination__pages">
+                    {enrollmentVisiblePages.map((p) => (
+                      <button
+                        key={p}
+                        className={`pagination__page ${p === enrollmentPage ? 'is-active' : ''}`}
+                        type="button"
+                        onClick={() => setEnrollmentPage(p)}
+                      >
+                        {p}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="pagination__info">
+                    Страница {enrollmentPage} из {enrollmentTotalPages}
+                  </div>
+                  <button
+                    className="button button--ghost"
+                    type="button"
+                    onClick={() => setEnrollmentPage((p) => p + 1)}
+                    disabled={!enrollmentHasNextPage}
+                  >
+                    Вперед
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </section>
       )}
