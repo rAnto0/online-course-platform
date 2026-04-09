@@ -1,7 +1,7 @@
 COMPOSE_DEV = docker compose --env-file .env.dev -f docker-compose.yaml -f docker-compose.dev.yaml
 MIGRATE_SERVICES = auth-service course-service progress-service
 
-.PHONY: run-dev down-dev build-dev logs-dev shell-service-dev test test-auth auth-test-db test-course course-test-db test-gateway env-init keys-init migrate
+.PHONY: run-dev down-dev build-dev logs-dev shell-service-dev test test-auth auth-test-db test-course course-test-db test-gateway env-init keys-init migrate seed-courses
 
 # ============
 # DEV COMMANDS
@@ -29,6 +29,9 @@ env-init:
 
 keys-init:
 	./scripts/init-jwt-keys.sh
+
+seed-courses:
+	python3 scripts/seed_courses.py
 
 migrate:
 ifeq ($(SERVICE),)

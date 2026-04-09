@@ -1,0 +1,4366 @@
+{
+  "categories": [
+    {
+      "name": "Python"
+    },
+    {
+      "name": "C++"
+    },
+    {
+      "name": "Java"
+    },
+    {
+      "name": "JavaScript"
+    },
+    {
+      "name": "TypeScript"
+    },
+    {
+      "name": "Go"
+    },
+    {
+      "name": "Rust"
+    },
+    {
+      "name": "Frontend"
+    },
+    {
+      "name": "Backend"
+    },
+    {
+      "name": "DevOps"
+    },
+    {
+      "name": "Data Science"
+    },
+    {
+      "name": "Machine Learning"
+    },
+    {
+      "name": "Databases"
+    },
+    {
+      "name": "Algorithms"
+    },
+    {
+      "name": "Security"
+    },
+    {
+      "name": "Cloud"
+    },
+    {
+      "name": "Mobile"
+    },
+    {
+      "name": "QA"
+    },
+    {
+      "name": "Design"
+    },
+    {
+      "name": "Product Management"
+    }
+  ],
+  "courses": [
+    {
+      "title": "Python Developer #1",
+      "description": "## О курсе\nКурс для начинающих разработчиков, которые хотят уверенно писать на Python и понимать, как устроены\nреальные веб- и data-проекты. Много практики, разбор типовых ошибок и работа с экосистемой.\n\n## Чему вы научитесь\n- Писать чистый, читаемый код на Python\n- Использовать стандартную библиотеку и популярные пакеты\n- Работать с файлами, API, базами данных\n- Понимать основы тестирования и отладки\n\n## Для кого\n- Новички без опыта\n- Студенты технических специальностей\n- Разработчики, переходящие на Python\n",
+      "category": "Python",
+      "level": "BEGINNER",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Модуль 1. Базовый Python",
+          "lessons": [
+            {
+              "title": "Введение и настройка окружения",
+              "content": "## Что будет в уроке\n- Установка Python и выбор IDE\n- Виртуальные окружения\n- Первый запуск программы\n\n## Практика\n- Установить Python\n- Создать виртуальное окружение\n- Запустить Hello, World\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            },
+            {
+              "title": "Переменные, типы и операторы",
+              "content": "## Основы\n- int, float, str, bool\n- Арифметика и логика\n- Преобразование типов\n\n## Практика\n- Калькулятор на 20 строк\n",
+              "lesson_type": "TEXT",
+              "duration": 35
+            }
+          ]
+        },
+        {
+          "title": "Модуль 2. Коллекции и функции",
+          "lessons": [
+            {
+              "title": "Списки, словари, множества",
+              "content": "## Что разберем\n- List и основные операции\n- Dict и работа с ключами\n- Set и уникальность\n\n## Практика\n- Мини-каталог товаров\n",
+              "lesson_type": "TEXT",
+              "duration": 40
+            },
+            {
+              "title": "Функции и область видимости",
+              "content": "## Ключевые идеи\n- Аргументы и return\n- *args и **kwargs\n- Область видимости\n\n## Практика\n- Набор утилит для строк\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "C++ Engineer #2",
+      "description": "## About\nThis course covers core concepts in **C++** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "C++",
+      "level": "INTERMEDIATE",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of C++\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in C++\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 18
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Java Backend #3",
+      "description": "## About\nThis course covers core concepts in **Java** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Java",
+      "level": "ADVANCED",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Java\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 15
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Java\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 37
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 12
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Modern JavaScript #4",
+      "description": "## About\nThis course covers core concepts in **JavaScript** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "JavaScript",
+      "level": "BEGINNER",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of JavaScript\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 15
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in JavaScript\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 23
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 42
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TypeScript Pro #5",
+      "description": "## About\nThis course covers core concepts in **TypeScript** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "TypeScript",
+      "level": "INTERMEDIATE",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of TypeScript\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 11
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in TypeScript\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 22
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Go Services #6",
+      "description": "## About\nThis course covers core concepts in **Go** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Go",
+      "level": "ADVANCED",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Go\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 36
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Go\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 38
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Rust Systems #7",
+      "description": "## About\nThis course covers core concepts in **Rust** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Rust",
+      "level": "BEGINNER",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Rust\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 10
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Rust\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 37
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Frontend Engineer #8",
+      "description": "## About\nThis course covers core concepts in **Frontend** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Frontend",
+      "level": "INTERMEDIATE",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Frontend\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 27
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Frontend\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 19
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 23
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Backend Fundamentals #9",
+      "description": "## About\nThis course covers core concepts in **Backend** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Backend",
+      "level": "ADVANCED",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Backend\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Backend\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 15
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 34
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DevOps Essentials #10",
+      "description": "## About\nThis course covers core concepts in **DevOps** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "DevOps",
+      "level": "BEGINNER",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of DevOps\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 32
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in DevOps\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 32
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 26
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Science Track #11",
+      "description": "## About\nThis course covers core concepts in **Data Science** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Data Science",
+      "level": "INTERMEDIATE",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Data Science\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 39
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Data Science\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 17
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 34
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ML Foundations #12",
+      "description": "## About\nThis course covers core concepts in **Machine Learning** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Machine Learning",
+      "level": "ADVANCED",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Machine Learning\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 15
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Machine Learning\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 28
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Databases Mastery #13",
+      "description": "## About\nThis course covers core concepts in **Databases** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Databases",
+      "level": "BEGINNER",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Databases\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 22
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Databases\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 12
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Algorithms & Data Structures #14",
+      "description": "## About\nThis course covers core concepts in **Algorithms** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Algorithms",
+      "level": "INTERMEDIATE",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Algorithms\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 28
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Algorithms\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 15
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "App Security #15",
+      "description": "## About\nThis course covers core concepts in **Security** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Security",
+      "level": "ADVANCED",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Security\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 34
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Security\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 27
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 39
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cloud Platforms #16",
+      "description": "## About\nThis course covers core concepts in **Cloud** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Cloud",
+      "level": "BEGINNER",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Cloud\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Cloud\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 33
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 32
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mobile Development #17",
+      "description": "## About\nThis course covers core concepts in **Mobile** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Mobile",
+      "level": "INTERMEDIATE",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Mobile\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 27
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Mobile\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "QA Automation #18",
+      "description": "## About\nThis course covers core concepts in **QA** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "QA",
+      "level": "ADVANCED",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of QA\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in QA\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 39
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 34
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Product Design #19",
+      "description": "## About\nThis course covers core concepts in **Design** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Design",
+      "level": "BEGINNER",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Design\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 27
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Design\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Product Management #20",
+      "description": "## About\nThis course covers core concepts in **Product Management** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Product Management",
+      "level": "INTERMEDIATE",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Product Management\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 13
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Product Management\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 12
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Python Developer #21",
+      "description": "## About\nThis course covers core concepts in **Python** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Python",
+      "level": "ADVANCED",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Python\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 35
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Python\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 27
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "C++ Engineer #22",
+      "description": "## About\nThis course covers core concepts in **C++** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "C++",
+      "level": "BEGINNER",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of C++\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 30
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in C++\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 23
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 41
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Java Backend #23",
+      "description": "## About\nThis course covers core concepts in **Java** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Java",
+      "level": "INTERMEDIATE",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Java\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 39
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Java\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 19
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 26
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Modern JavaScript #24",
+      "description": "## About\nThis course covers core concepts in **JavaScript** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "JavaScript",
+      "level": "ADVANCED",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of JavaScript\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in JavaScript\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TypeScript Pro #25",
+      "description": "## About\nThis course covers core concepts in **TypeScript** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "TypeScript",
+      "level": "BEGINNER",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of TypeScript\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 37
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in TypeScript\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 35
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 33
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Go Services #26",
+      "description": "## About\nThis course covers core concepts in **Go** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Go",
+      "level": "INTERMEDIATE",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Go\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 18
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Go\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 42
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 41
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Rust Systems #27",
+      "description": "## About\nThis course covers core concepts in **Rust** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Rust",
+      "level": "ADVANCED",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Rust\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 13
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Rust\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 17
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 19
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Frontend Engineer #28",
+      "description": "## About\nThis course covers core concepts in **Frontend** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Frontend",
+      "level": "BEGINNER",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Frontend\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 37
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Frontend\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 34
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 34
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Backend Fundamentals #29",
+      "description": "## About\nThis course covers core concepts in **Backend** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Backend",
+      "level": "INTERMEDIATE",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Backend\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 39
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Backend\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 43
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 26
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DevOps Essentials #30",
+      "description": "## About\nThis course covers core concepts in **DevOps** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "DevOps",
+      "level": "ADVANCED",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of DevOps\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 10
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in DevOps\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 17
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Science Track #31",
+      "description": "## About\nThis course covers core concepts in **Data Science** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Data Science",
+      "level": "BEGINNER",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Data Science\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 31
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Data Science\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 17
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 28
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 37
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ML Foundations #32",
+      "description": "## About\nThis course covers core concepts in **Machine Learning** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Machine Learning",
+      "level": "INTERMEDIATE",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Machine Learning\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Machine Learning\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 39
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 10
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Databases Mastery #33",
+      "description": "## About\nThis course covers core concepts in **Databases** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Databases",
+      "level": "ADVANCED",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Databases\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 42
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Databases\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 21
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 42
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Algorithms & Data Structures #34",
+      "description": "## About\nThis course covers core concepts in **Algorithms** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Algorithms",
+      "level": "BEGINNER",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Algorithms\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 29
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Algorithms\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 42
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 22
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "App Security #35",
+      "description": "## About\nThis course covers core concepts in **Security** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Security",
+      "level": "INTERMEDIATE",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Security\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 33
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Security\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 43
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cloud Platforms #36",
+      "description": "## About\nThis course covers core concepts in **Cloud** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Cloud",
+      "level": "ADVANCED",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Cloud\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 10
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Cloud\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 30
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 41
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mobile Development #37",
+      "description": "## About\nThis course covers core concepts in **Mobile** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Mobile",
+      "level": "BEGINNER",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Mobile\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 17
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Mobile\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 33
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 29
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "QA Automation #38",
+      "description": "## About\nThis course covers core concepts in **QA** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "QA",
+      "level": "INTERMEDIATE",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of QA\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 13
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in QA\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 15
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Product Design #39",
+      "description": "## About\nThis course covers core concepts in **Design** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Design",
+      "level": "ADVANCED",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Design\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 41
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Design\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Product Management #40",
+      "description": "## About\nThis course covers core concepts in **Product Management** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Product Management",
+      "level": "BEGINNER",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Product Management\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 18
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Product Management\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 40
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Python Developer #41",
+      "description": "## About\nThis course covers core concepts in **Python** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Python",
+      "level": "INTERMEDIATE",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Python\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 26
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Python\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 43
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 37
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "C++ Engineer #42",
+      "description": "## About\nThis course covers core concepts in **C++** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "C++",
+      "level": "ADVANCED",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of C++\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in C++\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 22
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 29
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Java Backend #43",
+      "description": "## About\nThis course covers core concepts in **Java** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Java",
+      "level": "BEGINNER",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Java\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 33
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Java\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 38
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 43
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 38
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Modern JavaScript #44",
+      "description": "## About\nThis course covers core concepts in **JavaScript** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "JavaScript",
+      "level": "INTERMEDIATE",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of JavaScript\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 17
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in JavaScript\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TypeScript Pro #45",
+      "description": "## About\nThis course covers core concepts in **TypeScript** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "TypeScript",
+      "level": "ADVANCED",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of TypeScript\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 31
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in TypeScript\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 11
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Go Services #46",
+      "description": "## About\nThis course covers core concepts in **Go** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Go",
+      "level": "BEGINNER",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Go\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Go\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 10
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Rust Systems #47",
+      "description": "## About\nThis course covers core concepts in **Rust** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Rust",
+      "level": "INTERMEDIATE",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Rust\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Rust\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 12
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Frontend Engineer #48",
+      "description": "## About\nThis course covers core concepts in **Frontend** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Frontend",
+      "level": "ADVANCED",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Frontend\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Frontend\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 42
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Backend Fundamentals #49",
+      "description": "## About\nThis course covers core concepts in **Backend** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Backend",
+      "level": "BEGINNER",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Backend\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 41
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Backend\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 23
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DevOps Essentials #50",
+      "description": "## About\nThis course covers core concepts in **DevOps** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "DevOps",
+      "level": "INTERMEDIATE",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of DevOps\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 40
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in DevOps\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 40
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 36
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Science Track #51",
+      "description": "## About\nThis course covers core concepts in **Data Science** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Data Science",
+      "level": "ADVANCED",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Data Science\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 22
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Data Science\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 37
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ML Foundations #52",
+      "description": "## About\nThis course covers core concepts in **Machine Learning** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Machine Learning",
+      "level": "BEGINNER",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Machine Learning\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 32
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Machine Learning\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 37
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 36
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 39
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Databases Mastery #53",
+      "description": "## About\nThis course covers core concepts in **Databases** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Databases",
+      "level": "INTERMEDIATE",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Databases\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 13
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Databases\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 13
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Algorithms & Data Structures #54",
+      "description": "## About\nThis course covers core concepts in **Algorithms** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Algorithms",
+      "level": "ADVANCED",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Algorithms\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 31
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Algorithms\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "App Security #55",
+      "description": "## About\nThis course covers core concepts in **Security** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Security",
+      "level": "BEGINNER",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Security\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 22
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Security\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 38
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cloud Platforms #56",
+      "description": "## About\nThis course covers core concepts in **Cloud** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Cloud",
+      "level": "INTERMEDIATE",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Cloud\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 37
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Cloud\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 21
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 27
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 39
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mobile Development #57",
+      "description": "## About\nThis course covers core concepts in **Mobile** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Mobile",
+      "level": "ADVANCED",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Mobile\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Mobile\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 38
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "QA Automation #58",
+      "description": "## About\nThis course covers core concepts in **QA** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "QA",
+      "level": "BEGINNER",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of QA\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in QA\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 13
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Product Design #59",
+      "description": "## About\nThis course covers core concepts in **Design** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Design",
+      "level": "INTERMEDIATE",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Design\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 15
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Design\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 36
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Product Management #60",
+      "description": "## About\nThis course covers core concepts in **Product Management** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Product Management",
+      "level": "ADVANCED",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Product Management\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 41
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Product Management\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 40
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 23
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Python Developer #61",
+      "description": "## About\nThis course covers core concepts in **Python** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Python",
+      "level": "BEGINNER",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Python\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 13
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Python\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 34
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "C++ Engineer #62",
+      "description": "## About\nThis course covers core concepts in **C++** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "C++",
+      "level": "INTERMEDIATE",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of C++\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 34
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in C++\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 26
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 39
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 28
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Java Backend #63",
+      "description": "## About\nThis course covers core concepts in **Java** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Java",
+      "level": "ADVANCED",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Java\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 37
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Java\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 41
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Modern JavaScript #64",
+      "description": "## About\nThis course covers core concepts in **JavaScript** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "JavaScript",
+      "level": "BEGINNER",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of JavaScript\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 22
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in JavaScript\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 28
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 23
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TypeScript Pro #65",
+      "description": "## About\nThis course covers core concepts in **TypeScript** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "TypeScript",
+      "level": "INTERMEDIATE",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of TypeScript\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in TypeScript\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 13
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 30
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Go Services #66",
+      "description": "## About\nThis course covers core concepts in **Go** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Go",
+      "level": "ADVANCED",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Go\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 13
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Go\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 40
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 42
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 43
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Rust Systems #67",
+      "description": "## About\nThis course covers core concepts in **Rust** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Rust",
+      "level": "BEGINNER",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Rust\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Rust\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 13
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 42
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Frontend Engineer #68",
+      "description": "## About\nThis course covers core concepts in **Frontend** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Frontend",
+      "level": "INTERMEDIATE",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Frontend\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 21
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Frontend\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Backend Fundamentals #69",
+      "description": "## About\nThis course covers core concepts in **Backend** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Backend",
+      "level": "ADVANCED",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Backend\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 35
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Backend\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 17
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DevOps Essentials #70",
+      "description": "## About\nThis course covers core concepts in **DevOps** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "DevOps",
+      "level": "BEGINNER",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of DevOps\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 15
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in DevOps\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 36
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 43
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Science Track #71",
+      "description": "## About\nThis course covers core concepts in **Data Science** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Data Science",
+      "level": "INTERMEDIATE",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Data Science\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 26
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Data Science\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 23
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 30
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ML Foundations #72",
+      "description": "## About\nThis course covers core concepts in **Machine Learning** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Machine Learning",
+      "level": "ADVANCED",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Machine Learning\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 26
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Machine Learning\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 35
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 18
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 29
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Databases Mastery #73",
+      "description": "## About\nThis course covers core concepts in **Databases** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Databases",
+      "level": "BEGINNER",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Databases\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 39
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Databases\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 30
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Algorithms & Data Structures #74",
+      "description": "## About\nThis course covers core concepts in **Algorithms** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Algorithms",
+      "level": "INTERMEDIATE",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Algorithms\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 39
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Algorithms\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "App Security #75",
+      "description": "## About\nThis course covers core concepts in **Security** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Security",
+      "level": "ADVANCED",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Security\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 23
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Security\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 42
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 26
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cloud Platforms #76",
+      "description": "## About\nThis course covers core concepts in **Cloud** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Cloud",
+      "level": "BEGINNER",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Cloud\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 32
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Cloud\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mobile Development #77",
+      "description": "## About\nThis course covers core concepts in **Mobile** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Mobile",
+      "level": "INTERMEDIATE",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Mobile\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 28
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Mobile\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 38
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "QA Automation #78",
+      "description": "## About\nThis course covers core concepts in **QA** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "QA",
+      "level": "ADVANCED",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of QA\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 29
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in QA\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 43
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 10
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Product Design #79",
+      "description": "## About\nThis course covers core concepts in **Design** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Design",
+      "level": "BEGINNER",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Design\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 29
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Design\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 18
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 26
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Product Management #80",
+      "description": "## About\nThis course covers core concepts in **Product Management** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Product Management",
+      "level": "INTERMEDIATE",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Product Management\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 17
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Product Management\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Python Developer #81",
+      "description": "## About\nThis course covers core concepts in **Python** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Python",
+      "level": "ADVANCED",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Python\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 27
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Python\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 28
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 23
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "C++ Engineer #82",
+      "description": "## About\nThis course covers core concepts in **C++** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "C++",
+      "level": "BEGINNER",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of C++\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 23
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in C++\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 26
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 42
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 41
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Java Backend #83",
+      "description": "## About\nThis course covers core concepts in **Java** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Java",
+      "level": "INTERMEDIATE",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Java\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 26
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Java\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 13
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 15
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 37
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Modern JavaScript #84",
+      "description": "## About\nThis course covers core concepts in **JavaScript** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "JavaScript",
+      "level": "ADVANCED",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of JavaScript\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 27
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in JavaScript\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 12
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 10
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "TypeScript Pro #85",
+      "description": "## About\nThis course covers core concepts in **TypeScript** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "TypeScript",
+      "level": "BEGINNER",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of TypeScript\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 18
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in TypeScript\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 26
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 38
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Go Services #86",
+      "description": "## About\nThis course covers core concepts in **Go** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Go",
+      "level": "INTERMEDIATE",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Go\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Go\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 37
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Rust Systems #87",
+      "description": "## About\nThis course covers core concepts in **Rust** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Rust",
+      "level": "ADVANCED",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Rust\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 17
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Rust\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 19
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Frontend Engineer #88",
+      "description": "## About\nThis course covers core concepts in **Frontend** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Frontend",
+      "level": "BEGINNER",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Frontend\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 12
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Frontend\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 33
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Backend Fundamentals #89",
+      "description": "## About\nThis course covers core concepts in **Backend** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Backend",
+      "level": "INTERMEDIATE",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Backend\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 37
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Backend\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 18
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 12
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 29
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "DevOps Essentials #90",
+      "description": "## About\nThis course covers core concepts in **DevOps** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "DevOps",
+      "level": "ADVANCED",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of DevOps\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 33
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in DevOps\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 12
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 32
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Science Track #91",
+      "description": "## About\nThis course covers core concepts in **Data Science** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Data Science",
+      "level": "BEGINNER",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Data Science\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Data Science\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 32
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ML Foundations #92",
+      "description": "## About\nThis course covers core concepts in **Machine Learning** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Machine Learning",
+      "level": "INTERMEDIATE",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Machine Learning\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 36
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Machine Learning\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 19
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Databases Mastery #93",
+      "description": "## About\nThis course covers core concepts in **Databases** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Databases",
+      "level": "ADVANCED",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Databases\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 21
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Databases\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 36
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 11
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Algorithms & Data Structures #94",
+      "description": "## About\nThis course covers core concepts in **Algorithms** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Algorithms",
+      "level": "BEGINNER",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Algorithms\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 31
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Algorithms\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 36
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 25
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "App Security #95",
+      "description": "## About\nThis course covers core concepts in **Security** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Security",
+      "level": "INTERMEDIATE",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Security\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 20
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Security\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 16
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 34
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cloud Platforms #96",
+      "description": "## About\nThis course covers core concepts in **Cloud** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Cloud",
+      "level": "ADVANCED",
+      "price": 0,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Cloud\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 40
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Cloud\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 22
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 39
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Mobile Development #97",
+      "description": "## About\nThis course covers core concepts in **Mobile** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Mobile",
+      "level": "BEGINNER",
+      "price": 1000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Mobile\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 32
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Mobile\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 29
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "QA Automation #98",
+      "description": "## About\nThis course covers core concepts in **QA** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "QA",
+      "level": "INTERMEDIATE",
+      "price": 2500,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of QA\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 11
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in QA\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 22
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 35
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Product Design #99",
+      "description": "## About\nThis course covers core concepts in **Design** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Design",
+      "level": "ADVANCED",
+      "price": 5000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Design\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 27
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Design\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 14
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 27
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Product Management #100",
+      "description": "## About\nThis course covers core concepts in **Product Management** with практическими примерами.\n\n## What you will learn\n- Key foundations and workflows\n- Best practices and tooling\n- Real-world projects\n",
+      "category": "Product Management",
+      "level": "BEGINNER",
+      "price": 10000,
+      "sections": [
+        {
+          "title": "Module 1: Overview",
+          "lessons": [
+            {
+              "title": "Lesson 1: Introduction",
+              "content": "## Lesson goals\n- Fundamentals of Product Management\n- Tooling and workflow\n- Practical examples\n",
+              "lesson_type": "TEXT",
+              "duration": 42
+            },
+            {
+              "title": "Lesson 2: Core Concepts",
+              "content": "## Key concepts\n- Core patterns in Product Management\n- Common pitfalls\n- Exercises\n",
+              "lesson_type": "TEXT",
+              "duration": 35
+            }
+          ]
+        },
+        {
+          "title": "Module 2: Practice",
+          "lessons": [
+            {
+              "title": "Lesson 3: Hands-on",
+              "content": "## Practice\n- Build a small project\n- Review best practices\n",
+              "lesson_type": "TEXT",
+              "duration": 44
+            },
+            {
+              "title": "Lesson 4: Review",
+              "content": "## Review\n- Summarize the module\n- Next steps\n",
+              "lesson_type": "TEXT",
+              "duration": 31
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
