@@ -1,7 +1,16 @@
 COMPOSE_DEV = docker compose --env-file .env.dev -f docker-compose.yaml -f docker-compose.dev.yaml
 MIGRATE_SERVICES = auth-service course-service progress-service
+PYTEST_ARGS ?= -q --disable-warnings -r fE
 
 .PHONY: run-dev down-dev build-dev logs-dev shell-service-dev test test-auth auth-test-db test-course course-test-db test-gateway env-init keys-init migrate seed-courses
+
+# =======
+# HELPERS
+# =======
+define ensure_db
+	@echo "Ensuring test database $(1)..."
+	@$(COMPOSE_DEV) exec -T postgres psql -U postgres -tc "SELECT 1 FROM pg_database WHERE datname = '$(1)';" | grep -q 1 || $(COMPOSE_DEV) exec -T postgres psql -U postgres -c "CREATE DATABASE $(1);"
+endef
 
 # ============
 # DEV COMMANDS
@@ -49,18 +58,19 @@ endif
 test: test-auth test-course
 
 test-gateway:
-	$(COMPOSE_DEV) run --rm gateway-tests
+	@echo "Running gateway tests..."
+	@$(COMPOSE_DEV) run --rm gateway-tests
 
 test-auth: auth-test-db
-	$(COMPOSE_DEV) exec -T auth-service pytest
+	@echo "Running auth-service tests..."
+	@$(COMPOSE_DEV) exec -T auth-service pytest $(PYTEST_ARGS)
 
 auth-test-db:
-	$(COMPOSE_DEV) exec -T postgres psql -U postgres -tc "SELECT 1 FROM pg_database WHERE datname = 'auth_db_test';" | grep -q 1 || \
-	$(COMPOSE_DEV) exec -T postgres psql -U postgres -c "CREATE DATABASE auth_db_test;"
+	$(call ensure_db,auth_db_test)
 
 test-course: course-test-db
-	$(COMPOSE_DEV) exec -T course-service pytest
+	@echo "Running course-service tests..."
+	@$(COMPOSE_DEV) exec -T course-service pytest $(PYTEST_ARGS)
 
 course-test-db:
-	$(COMPOSE_DEV) exec -T postgres psql -U postgres -tc "SELECT 1 FROM pg_database WHERE datname = 'course_db_test';" | grep -q 1 || \
-	$(COMPOSE_DEV) exec -T postgres psql -U postgres -c "CREATE DATABASE course_db_test;"
+	$(call ensure_db,course_db_test)
