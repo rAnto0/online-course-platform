@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import TopBar from './components/TopBar.jsx'
 import Footer from './components/Footer.jsx'
+import AssistantChatWidget from './components/AssistantChatWidget.jsx'
 import Home from './pages/Home.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
@@ -38,6 +39,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      <AssistantChatWidget />
       <Footer />
     </div>
   )
