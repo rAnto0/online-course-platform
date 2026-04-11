@@ -1,5 +1,6 @@
 {
     "auth_service_host": "http://auth-service:8000",
     "course_service_host": "http://course-service:8001",
-    "progress_service_host": "http://progress-service:8002"
+    "progress_service_host": "http://progress-service:8002",
+    "assistant_service_host": "http://assistant-service:8003"
 }
