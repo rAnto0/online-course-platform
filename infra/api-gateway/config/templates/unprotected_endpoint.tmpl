@@ -1,6 +1,9 @@
 {
   "endpoint": "{{ .endpoint_path }}",
   "method": "{{ .method }}",
+  {{- if .timeout }}
+  "timeout": "{{ .timeout }}",
+  {{- end }}
   {{- if .input_query_strings }}
   "input_query_strings": [
     {{- range $i, $q := .input_query_strings -}}

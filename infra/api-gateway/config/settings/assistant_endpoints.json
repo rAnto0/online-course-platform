@@ -1,0 +1,17 @@
+{
+    "endpoints": [
+        {
+            "type": "unprotected",
+            "endpoint_path": "/assistant/health",
+            "method": "GET",
+            "backend_pattern": "/health"
+        },
+        {
+            "type": "unprotected",
+            "endpoint_path": "/assistant/chat",
+            "method": "POST",
+            "backend_pattern": "/assistant/chat",
+            "timeout": "300s"
+        }
+    ]
+}
