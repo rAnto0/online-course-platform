@@ -29,6 +29,17 @@ services:
       - ./microservices/progress:/app
     command: uvicorn app.main:app --host 0.0.0.0 --port 8002 --reload
 
+  assistant-service:
+    env_file:
+      - ./microservices/assistant/.env.dev
+    volumes:
+      - ./microservices/assistant:/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8003 --reload
+
+  ollama:
+    ports:
+      - "11434:11434"
+
   api-gateway:
     volumes:
       - ./infra/api-gateway:/etc/krakend
