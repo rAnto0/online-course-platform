@@ -963,8 +963,13 @@ textarea {
 .assistant__messages {
   padding: 12px;
   overflow: auto;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
+}
+
+.assistant__messages > *:first-child {
+  margin-top: auto;
 }
 
 .assistant__message {
