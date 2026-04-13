@@ -8,7 +8,7 @@ from fastapi import Request
 from app.core.config import settings
 from app.core.logging import setup_logging
 from app.routers.chat import router as chat_router
-from app.services.chat import warmup_ollama
+from app.services.chat import warmup_llm
 
 setup_logging()
 logger = logging.getLogger("app.main")
@@ -16,12 +16,9 @@ logger = logging.getLogger("app.main")
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
-    if not settings.OLLAMA_WARMUP_ON_STARTUP:
-        logger.info("Ollama warmup on startup is disabled")
-        return
-    logger.info("Running Ollama warmup before accepting requests")
-    await warmup_ollama()
-    logger.info("Ollama warmup completed, service is ready")
+    logger.info("Running LLM warmup before accepting requests")
+    await warmup_llm()
+    logger.info("LLM warmup completed, service is ready")
 
     yield
 
