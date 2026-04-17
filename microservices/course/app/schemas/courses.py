@@ -5,6 +5,7 @@ from uuid import UUID
 from pydantic import BaseModel, Field
 
 from app.models.enums import CourseLevel, CourseStatus, LessonType
+from app.schemas.pagination import PaginatedResponse
 
 
 class CourseCreate(BaseModel):
@@ -105,3 +106,8 @@ class LessonRead(BaseModel):
     updated_at: datetime
 
     model_config = {"from_attributes": True}
+
+
+CourseListResponse = PaginatedResponse[CourseRead]
+SectionListResponse = PaginatedResponse[SectionRead]
+LessonListResponse = PaginatedResponse[LessonRead]

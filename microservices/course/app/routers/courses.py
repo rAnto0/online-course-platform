@@ -23,7 +23,7 @@ course_owner_or_admin_deps = [Depends(require_course_owner_or_admin)]
 # --- Courses ---
 @router.get(
     "/",
-    response_model=list[sch_courses.CourseRead],
+    response_model=sch_courses.CourseListResponse,
     status_code=status.HTTP_200_OK,
     summary="Список курсов",
 )
@@ -32,7 +32,9 @@ async def list_courses(
     limit: int = 100,
     course_service: CourseService = Depends(get_course_service),
 ):
-    return await course_service.get_courses(skip=skip, limit=limit)
+    items, total = await course_service.get_courses(skip=skip, limit=limit)
+
+    return {"items": items, "total": total, "skip": skip, "limit": limit}
 
 
 @router.get(
@@ -129,15 +131,21 @@ async def delete_course(
 # --- Sections ---
 @router.get(
     "/{course_id}/sections",
-    response_model=list[sch_courses.SectionRead],
+    response_model=sch_courses.SectionListResponse,
     status_code=status.HTTP_200_OK,
     summary="Секции курса",
 )
 async def list_sections(
     course_id: UUID,
+    skip: int = 0,
+    limit: int = 100,
     course_service: CourseService = Depends(get_course_service),
 ):
-    return await course_service.list_sections(course_id=course_id)
+    items, total = await course_service.list_sections(
+        course_id=course_id, skip=skip, limit=limit
+    )
+
+    return {"items": items, "total": total, "skip": skip, "limit": limit}
 
 
 @router.get(
@@ -207,16 +215,22 @@ async def delete_section(
 # --- Lessons ---
 @router.get(
     "/{course_id}/sections/{section_id}/lessons",
-    response_model=list[sch_courses.LessonRead],
+    response_model=sch_courses.LessonListResponse,
     status_code=status.HTTP_200_OK,
     summary="Уроки секции",
 )
 async def list_lessons(
     course_id: UUID,
     section_id: UUID,
+    skip: int = 0,
+    limit: int = 100,
     course_service: CourseService = Depends(get_course_service),
 ):
-    return await course_service.list_lessons(course_id=course_id, section_id=section_id)
+    items, total = await course_service.list_lessons(
+        course_id=course_id, section_id=section_id, skip=skip, limit=limit
+    )
+
+    return {"items": items, "total": total, "skip": skip, "limit": limit}
 
 
 @router.get(

@@ -1,7 +1,7 @@
 from typing import Sequence
 from uuid import UUID
 
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import IntegrityError
 from fastapi import Depends, HTTPException, status
@@ -30,7 +30,7 @@ class CategoryService:
         self,
         skip: int = 0,
         limit: int = 100,
-    ) -> Sequence[Category]:
+    ) -> tuple[Sequence[Category], int]:
         """Сервис - получить список категорий
 
         Args:
@@ -40,10 +40,13 @@ class CategoryService:
         Returns:
             Sequence[Category]: Список категорий
         """
+        total_query = select(func.count()).select_from(Category)
+        total = await self.session.scalar(total_query)
+
         query = select(Category).order_by(Category.created_at).offset(skip).limit(limit)
         result = await self.session.execute(query)
 
-        return result.scalars().all()
+        return result.scalars().all(), int(total or 0)
 
     async def get_category_by_id_or_404(
         self,

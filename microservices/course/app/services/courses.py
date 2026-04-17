@@ -33,12 +33,17 @@ class CourseService:
         self.session = session
 
     # --- Courses ---
-    async def get_courses(self, skip: int = 0, limit: int = 100) -> Sequence[Course]:
+    async def get_courses(
+        self, skip: int = 0, limit: int = 100
+    ) -> tuple[Sequence[Course], int]:
         """Возвращает список курсов с пагинацией."""
+        total_query = select(func.count()).select_from(Course)
+        total = await self.session.scalar(total_query)
+
         query = select(Course).order_by(Course.created_at).offset(skip).limit(limit)
         result = await self.session.execute(query)
 
-        return result.scalars().all()
+        return result.scalars().all(), int(total or 0)
 
     async def get_course_or_404(self, course_id: UUID) -> Course:
         """Возвращает курс по id или 404."""
@@ -176,17 +181,27 @@ class CourseService:
         return course
 
     # --- Sections ---
-    async def list_sections(self, course_id: UUID) -> Sequence[Section]:
+    async def list_sections(
+        self, course_id: UUID, skip: int = 0, limit: int = 100
+    ) -> tuple[Sequence[Section], int]:
         """Возвращает список секций курса."""
         await self.get_course_or_404(course_id=course_id)
+
+        total_query = (
+            select(func.count()).select_from(Section).where(Section.course_id == course_id)
+        )
+        total = await self.session.scalar(total_query)
+
         query = (
             select(Section)
             .where(Section.course_id == course_id)
             .order_by(Section.position)
+            .offset(skip)
+            .limit(limit)
         )
         result = await self.session.execute(query)
 
-        return result.scalars().all()
+        return result.scalars().all(), int(total or 0)
 
     async def get_section_or_404(self, course_id: UUID, section_id: UUID) -> Section:
         """Возвращает секцию курса по id или 404."""
@@ -271,17 +286,33 @@ class CourseService:
         await self.session.commit()
 
     # --- Lessons ---
-    async def list_lessons(self, course_id: UUID, section_id: UUID) -> Sequence[Lesson]:
+    async def list_lessons(
+        self,
+        course_id: UUID,
+        section_id: UUID,
+        skip: int = 0,
+        limit: int = 100,
+    ) -> tuple[Sequence[Lesson], int]:
         """Возвращает список уроков секции."""
         await self.get_section_or_404(course_id=course_id, section_id=section_id)
+
+        total_query = (
+            select(func.count())
+            .select_from(Lesson)
+            .where(Lesson.section_id == section_id)
+        )
+        total = await self.session.scalar(total_query)
+
         query = (
             select(Lesson)
             .where(Lesson.section_id == section_id)
             .order_by(Lesson.position)
+            .offset(skip)
+            .limit(limit)
         )
         result = await self.session.execute(query)
 
-        return result.scalars().all()
+        return result.scalars().all(), int(total or 0)
 
     async def get_lesson_or_404(
         self, course_id: UUID, section_id: UUID, lesson_id: UUID

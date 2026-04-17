@@ -8,7 +8,24 @@ from tests.helpers import assert_category_in_db
 async def test_list_categories_empty(async_client: AsyncClient):
     resp = await async_client.get("/categories/")
     assert resp.status_code == 200
-    assert resp.json() == []
+    assert resp.json() == {"items": [], "total": 0, "skip": 0, "limit": 100}
+
+
+async def test_list_categories_pagination_total(
+    async_client: AsyncClient,
+    category_factory,
+):
+    await category_factory()
+    await category_factory()
+
+    resp = await async_client.get("/categories/", params={"skip": 0, "limit": 1})
+    assert resp.status_code == 200
+    body = resp.json()
+
+    assert body["skip"] == 0
+    assert body["limit"] == 1
+    assert body["total"] == 2
+    assert len(body["items"]) == 1
 
 
 async def test_get_category_not_found(async_client: AsyncClient):

@@ -16,14 +16,18 @@ def _assert_status_in(resp: httpx.Response, expected: set[int]) -> None:
     assert resp.status_code in expected, resp.text
 
 
-def _get_collection(client: httpx.Client, path: str, params: dict | None = None) -> list:
+def _get_paginated(client: httpx.Client, path: str, params: dict | None = None) -> dict:
     resp = client.get(path, params=params)
     assert resp.status_code == 200, resp.text
     data = resp.json()
     assert isinstance(data, dict)
-    assert "collection" in data
-    assert isinstance(data["collection"], list)
-    return data["collection"]
+    assert "items" in data
+    assert isinstance(data["items"], list)
+    assert "total" in data
+    assert isinstance(data["total"], int)
+    assert "skip" in data
+    assert "limit" in data
+    return data
 
 
 def test_auth_health():
@@ -34,19 +38,23 @@ def test_auth_health():
 
 def test_categories_list_with_query():
     with _client() as client:
-        items = _get_collection(client, "/categories", params={"skip": 0, "limit": 2})
-    assert len(items) <= 2
+        page = _get_paginated(client, "/categories", params={"skip": 0, "limit": 2})
+    assert len(page["items"]) <= 2
+    assert page["total"] >= len(page["items"])
 
 
 def test_courses_list_with_query():
     with _client() as client:
-        items = _get_collection(client, "/courses", params={"skip": 0, "limit": 2})
-    assert len(items) <= 2
+        page = _get_paginated(client, "/courses", params={"skip": 0, "limit": 2})
+    assert len(page["items"]) <= 2
+    assert page["total"] >= len(page["items"])
 
 
 def test_categories_by_id_and_slug():
     with _client() as client:
-        items = _get_collection(client, "/categories", params={"skip": 0, "limit": 1})
+        items = _get_paginated(client, "/categories", params={"skip": 0, "limit": 1})[
+            "items"
+        ]
         if not items:
             pytest.skip("No categories to test by id/slug")
         category = items[0]
@@ -64,7 +72,9 @@ def test_categories_by_id_and_slug():
 
 def test_courses_and_nested_sections_lessons():
     with _client() as client:
-        courses = _get_collection(client, "/courses", params={"skip": 0, "limit": 1})
+        courses = _get_paginated(client, "/courses", params={"skip": 0, "limit": 1})[
+            "items"
+        ]
         if not courses:
             pytest.skip("No courses to test nested routes")
         course_id = courses[0].get("id")
@@ -73,7 +83,11 @@ def test_courses_and_nested_sections_lessons():
         course = client.get(f"/courses/{course_id}")
         _assert_status_in(course, {200})
 
-        sections = _get_collection(client, f"/courses/{course_id}/sections", params={"skip": 0, "limit": 1})
+        sections = _get_paginated(
+            client,
+            f"/courses/{course_id}/sections",
+            params={"skip": 0, "limit": 1},
+        )["items"]
         if not sections:
             pytest.skip("No sections to test lessons routes")
         section_id = sections[0].get("id")
@@ -82,11 +96,11 @@ def test_courses_and_nested_sections_lessons():
         section = client.get(f"/courses/{course_id}/sections/{section_id}")
         _assert_status_in(section, {200})
 
-        lessons = _get_collection(
+        lessons = _get_paginated(
             client,
             f"/courses/{course_id}/sections/{section_id}/lessons",
             params={"skip": 0, "limit": 1},
-        )
+        )["items"]
         if not lessons:
             pytest.skip("No lessons to test lesson detail route")
         lesson_id = lessons[0].get("id")

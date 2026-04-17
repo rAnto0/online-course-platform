@@ -8,7 +8,24 @@ from tests.helpers import assert_course_in_db
 async def test_list_courses_empty(async_client: AsyncClient):
     resp = await async_client.get("/courses/")
     assert resp.status_code == 200
-    assert resp.json() == []
+    assert resp.json() == {"items": [], "total": 0, "skip": 0, "limit": 100}
+
+
+async def test_list_courses_pagination_total(
+    async_client: AsyncClient,
+    course_factory,
+):
+    await course_factory()
+    await course_factory()
+
+    resp = await async_client.get("/courses/", params={"skip": 0, "limit": 1})
+    assert resp.status_code == 200
+    body = resp.json()
+
+    assert body["skip"] == 0
+    assert body["limit"] == 1
+    assert body["total"] == 2
+    assert len(body["items"]) == 1
 
 
 async def test_get_course_not_found(async_client: AsyncClient):
@@ -272,8 +289,32 @@ async def test_list_sections(
     resp = await async_client.get(f"/courses/{course.id}/sections")
     assert resp.status_code == 200
     data = resp.json()
-    assert len(data) == 1
-    assert data[0]["id"] == str(section.id)
+    assert data["total"] == 1
+    assert data["skip"] == 0
+    assert data["limit"] == 100
+    assert len(data["items"]) == 1
+    assert data["items"][0]["id"] == str(section.id)
+
+
+async def test_list_sections_pagination_total(
+    async_client: AsyncClient,
+    course_factory,
+    section_factory,
+):
+    course = await course_factory()
+    await section_factory(course_id=course.id, position=0)
+    await section_factory(course_id=course.id, position=1)
+
+    resp = await async_client.get(
+        f"/courses/{course.id}/sections", params={"skip": 1, "limit": 1}
+    )
+    assert resp.status_code == 200
+    data = resp.json()
+
+    assert data["total"] == 2
+    assert data["skip"] == 1
+    assert data["limit"] == 1
+    assert len(data["items"]) == 1
 
 
 async def test_list_sections_course_not_found(async_client: AsyncClient):
@@ -425,8 +466,35 @@ async def test_list_lessons(
     resp = await async_client.get(f"/courses/{course.id}/sections/{section.id}/lessons")
     assert resp.status_code == 200
     data = resp.json()
-    assert len(data) == 1
-    assert data[0]["id"] == str(lesson.id)
+    assert data["total"] == 1
+    assert data["skip"] == 0
+    assert data["limit"] == 100
+    assert len(data["items"]) == 1
+    assert data["items"][0]["id"] == str(lesson.id)
+
+
+async def test_list_lessons_pagination_total(
+    async_client: AsyncClient,
+    course_factory,
+    section_factory,
+    lesson_factory,
+):
+    course = await course_factory()
+    section = await section_factory(course_id=course.id)
+    await lesson_factory(section_id=section.id, position=0)
+    await lesson_factory(section_id=section.id, position=1)
+
+    resp = await async_client.get(
+        f"/courses/{course.id}/sections/{section.id}/lessons",
+        params={"skip": 1, "limit": 1},
+    )
+    assert resp.status_code == 200
+    data = resp.json()
+
+    assert data["total"] == 2
+    assert data["skip"] == 1
+    assert data["limit"] == 1
+    assert len(data["items"]) == 1
 
 
 async def test_list_lessons_course_not_found(async_client: AsyncClient):

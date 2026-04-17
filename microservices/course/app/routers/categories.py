@@ -2,7 +2,12 @@ from uuid import UUID
 
 from fastapi import APIRouter, Depends, Response, status
 
-from app.schemas.categories import CategoryCreate, CategoryRead, CategoryUpdate
+from app.schemas.categories import (
+    CategoryCreate,
+    CategoryListResponse,
+    CategoryRead,
+    CategoryUpdate,
+)
 from app.services.categories import CategoryService, get_category_service
 from app.dependencies.auth import require_admin
 
@@ -16,7 +21,7 @@ admin_deps = [Depends(require_admin)]
 
 @router.get(
     "/",
-    response_model=list[CategoryRead],
+    response_model=CategoryListResponse,
     status_code=status.HTTP_200_OK,
     summary="Список категорий",
 )
@@ -25,7 +30,9 @@ async def list_categories(
     limit: int = 100,
     category_service: CategoryService = Depends(get_category_service),
 ):
-    return await category_service.get_categories(skip=skip, limit=limit)
+    items, total = await category_service.get_categories(skip=skip, limit=limit)
+
+    return {"items": items, "total": total, "skip": skip, "limit": limit}
 
 
 @router.get(

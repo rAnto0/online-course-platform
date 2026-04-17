@@ -4,6 +4,8 @@ from uuid import UUID
 
 from pydantic import BaseModel, Field
 
+from app.schemas.pagination import PaginatedResponse
+
 
 class CategoryBase(BaseModel):
     name: Annotated[
@@ -33,3 +35,6 @@ class CategoryRead(CategoryBase):
     updated_at: datetime
 
     model_config = {"from_attributes": True}
+
+
+CategoryListResponse = PaginatedResponse[CategoryRead]
