@@ -36,7 +36,7 @@ async function parseResponse(response) {
   }
   try {
     return JSON.parse(text)
-  } catch (error) {
+  } catch {
     return text
   }
 }
@@ -114,7 +114,7 @@ export async function apiRequest(
         contentType,
         retry: false,
       })
-    } catch (error) {
+    } catch {
       clearTokens()
     }
   }

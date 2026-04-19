@@ -13,7 +13,8 @@ export default function LessonViewer() {
   const [error, setError] = useState('')
   const [hasCompleted, setHasCompleted] = useState(false)
   const [isTracking, setIsTracking] = useState(false)
-  const contentRef = useRef(null)
+  const hasCompletedRef = useRef(false)
+  const lastLessonIdRef = useRef(lessonId)
 
   const fetchLesson = useCallback(async () => {
     const data = await apiRequest(`/courses/${courseId}/sections/${sectionId}/lessons/${lessonId}`, {
@@ -25,11 +26,14 @@ export default function LessonViewer() {
 
   useEffect(() => {
     let mounted = true
+    lastLessonIdRef.current = lessonId
+    hasCompletedRef.current = false
     const load = async () => {
       try {
         await fetchLesson()
         if (mounted) {
           setStatus('ready')
+          setHasCompleted(false)
         }
         if (isAuthenticated) {
           try {
@@ -48,7 +52,7 @@ export default function LessonViewer() {
                 progress_percent: 20,
               },
             })
-          } catch (err) {
+          } catch {
             setIsTracking(false)
           }
         }
@@ -62,11 +66,14 @@ export default function LessonViewer() {
     load()
     return () => {
       mounted = false
+      hasCompletedRef.current = false
     }
   }, [courseId, sectionId, lessonId, isAuthenticated, fetchLesson])
 
   const markCompleted = useCallback(async () => {
-    if (!isAuthenticated || hasCompleted) return
+    if (!isAuthenticated) return
+    if (hasCompletedRef.current) return
+    hasCompletedRef.current = true
     setHasCompleted(true)
     try {
       await apiRequest(`/progress/lesson-progress/lessons/${lessonId}`, {
@@ -82,25 +89,26 @@ export default function LessonViewer() {
     } catch (err) {
       console.warn('Lesson completion warning:', err)
     }
-  }, [courseId, sectionId, lessonId, isAuthenticated, hasCompleted])
+  }, [courseId, sectionId, lessonId, isAuthenticated, setHasCompleted])
 
   const handleScroll = useCallback(() => {
-    if (!contentRef.current || hasCompleted) return
+    if (hasCompletedRef.current) return
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement
     if (scrollTop + clientHeight >= scrollHeight - 40) {
       markCompleted()
     }
-  }, [hasCompleted, markCompleted])
+  }, [markCompleted])
 
   useEffect(() => {
-    if (!isTracking) return undefined
+    if (!isTracking) return
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [handleScroll, isTracking])
 
   useEffect(() => {
-    if (!isTracking) return undefined
+    if (!isTracking) return
     const checkCompletion = () => {
+      if (hasCompletedRef.current) return
       const { scrollHeight, clientHeight } = document.documentElement
       if (scrollHeight <= clientHeight + 40) {
         markCompleted()
@@ -128,7 +136,7 @@ export default function LessonViewer() {
   }
 
   return (
-    <div className="page lesson-page" ref={contentRef}>
+    <div className="page lesson-page">
       <Link className="link-back" to={`/courses/${courseId}`}>← Назад к курсу</Link>
       <div className="lesson-header">
         <h2>{lesson.title}</h2>

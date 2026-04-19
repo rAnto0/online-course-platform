@@ -88,7 +88,7 @@ export function AuthProvider({ children }) {
         if (mounted) {
           setStatus('ready')
         }
-      } catch (error) {
+      } catch {
         clearTokens()
         if (mounted) {
           setUser(null)
@@ -112,7 +112,7 @@ export function AuthProvider({ children }) {
     refreshSession,
     setUser,
     safeUser: user ?? emptyUser,
-  }), [status, user, login, register, logout, refreshSession])
+  }), [status, login, register, logout, refreshSession, user])
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

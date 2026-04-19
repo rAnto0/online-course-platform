@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { apiRequest, normalizeCollection } from '../utils/apiClient.js'
 import { formatPrice, levelLabels } from '../utils/format.js'
 import { markdownToText } from '../utils/markdown.js'
+import Pagination from '../components/Pagination.jsx'
 
 export default function Home() {
   const [courses, setCourses] = useState([])
@@ -11,8 +12,6 @@ export default function Home() {
   const [search, setSearch] = useState('')
   const [categoryFilter, setCategoryFilter] = useState('all')
   const [page, setPage] = useState(1)
-  const perPage = 9
-  const [totalCourses, setTotalCourses] = useState(0)
 
   const coursesWithPreview = useMemo(() => (
     courses.map((course) => ({
@@ -29,7 +28,7 @@ export default function Home() {
         if (mounted) {
           setCategories(normalizeCollection(categoriesData))
         }
-      } catch (error) {
+      } catch {
         if (mounted) {
           setCategories([])
         }
@@ -49,13 +48,9 @@ export default function Home() {
         if (mounted) {
           const allCourses = normalizeCollection(coursesData)
           setCourses(allCourses)
-          const publishedCount = allCourses.filter(
-            (course) => course.status !== 'DRAFT' && course.status !== 'ARCHIVED',
-          ).length
-          setTotalCourses(publishedCount)
           setStatus('ready')
         }
-      } catch (error) {
+      } catch {
         if (mounted) {
           setStatus('error')
         }
@@ -81,28 +76,17 @@ export default function Home() {
     })
   }, [coursesWithPreview, search, categoryFilter])
 
-  const totalPages = Math.max(1, Math.ceil(filteredCourses.length / perPage))
-  const pagedCourses = useMemo(() => {
-    const start = (page - 1) * perPage
-    return filteredCourses.slice(start, start + perPage)
-  }, [filteredCourses, page])
-  const hasNextPage = page < totalPages
-  const visiblePages = useMemo(() => {
-    if (totalPages <= 5) {
-      return Array.from({ length: totalPages }, (_, i) => i + 1)
-    }
-    let start = Math.max(1, page - 2)
-    let end = start + 4
-    if (end > totalPages) {
-      end = totalPages
-      start = Math.max(1, end - 4)
-    }
-    return Array.from({ length: end - start + 1 }, (_, i) => start + i)
-  }, [totalPages, page])
+  const totalPages = Math.max(1, Math.ceil(filteredCourses.length / 9))
+  const clampedPage = useMemo(() => Math.min(page, totalPages), [page, totalPages])
+  const totalCourses = useMemo(() => {
+    return courses.filter((c) => c.status !== 'DRAFT' && c.status !== 'ARCHIVED').length
+  }, [courses])
 
-  useEffect(() => {
-    setPage(1)
-  }, [search, categoryFilter])
+  const pagedCourses = useMemo(() => {
+    const start = (clampedPage - 1) * 9
+    return filteredCourses.slice(start, start + 9)
+  }, [filteredCourses, clampedPage])
+  const hasNextPage = clampedPage < totalPages
 
   return (
     <div className="page">
@@ -200,40 +184,13 @@ export default function Home() {
           ))}
         </div>
 
-        {(page > 1 || hasNextPage) && (
-          <div className="pagination">
-            <button
-              className="button button--ghost"
-              type="button"
-              onClick={() => setPage((p) => Math.max(1, p - 1))}
-              disabled={page === 1}
-            >
-              Назад
-            </button>
-            <div className="pagination__pages">
-              {visiblePages.map((p) => (
-                <button
-                  key={p}
-                  className={`pagination__page ${p === page ? 'is-active' : ''}`}
-                  type="button"
-                  onClick={() => setPage(p)}
-                >
-                  {p}
-                </button>
-              ))}
-            </div>
-            <div className="pagination__info">
-              Страница {page} из {totalPages}
-            </div>
-            <button
-              className="button button--ghost"
-              type="button"
-              onClick={() => setPage((p) => p + 1)}
-              disabled={!hasNextPage}
-            >
-              Вперед
-            </button>
-          </div>
+        {(clampedPage > 1 || hasNextPage) && (
+          <Pagination
+            page={clampedPage}
+            totalPages={totalPages}
+            hasNextPage={hasNextPage}
+            onPageChange={setPage}
+          />
         )}
       </section>
     </div>
