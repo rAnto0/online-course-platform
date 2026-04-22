@@ -46,6 +46,29 @@ class CourseRead(BaseModel):
     model_config = {"from_attributes": True}
 
 
+class CourseBatchRequest(BaseModel):
+    course_ids: Annotated[
+        list[UUID],
+        Field(
+            ...,
+            min_length=1,
+            max_length=100,
+            description="Список ID курсов для получения информации о них",
+        ),
+    ]
+
+
+class CourseBatchResponse(BaseModel):
+    found: Annotated[
+        list[CourseRead],
+        Field(description="Список найденных курсов"),
+    ] = []
+    missing: Annotated[
+        list[UUID],
+        Field(description="Список ID курсов, для которых не была найдена информация"),
+    ] = []
+
+
 class SectionCreate(BaseModel):
     title: Annotated[str, Field(..., min_length=1, max_length=255)]
     position: int | None = None
