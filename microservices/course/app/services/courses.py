@@ -45,6 +45,14 @@ class CourseService:
 
         return result.scalars().all(), int(total or 0)
 
+    async def get_courses_by_ids(self, course_ids: list[UUID]) -> Sequence[Course]:
+        """Возвращает курсы по списку id."""
+        result = await self.session.execute(
+            select(Course).where(Course.id.in_(course_ids))
+        )
+
+        return result.scalars().all()
+
     async def get_course_or_404(self, course_id: UUID) -> Course:
         """Возвращает курс по id или 404."""
         result = await self.session.execute(
@@ -188,7 +196,9 @@ class CourseService:
         await self.get_course_or_404(course_id=course_id)
 
         total_query = (
-            select(func.count()).select_from(Section).where(Section.course_id == course_id)
+            select(func.count())
+            .select_from(Section)
+            .where(Section.course_id == course_id)
         )
         total = await self.session.scalar(total_query)
 
