@@ -46,6 +46,12 @@
         },
         {
             "type": "unprotected",
+            "endpoint_path": "/courses/by-ids",
+            "method": "POST",
+            "backend_pattern": "/courses/by-ids"
+        },
+        {
+            "type": "unprotected",
             "endpoint_path": "/courses/{course_id}",
             "method": "GET",
             "backend_pattern": "/courses/{course_id}"
