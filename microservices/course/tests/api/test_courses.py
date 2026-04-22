@@ -33,6 +33,82 @@ async def test_get_course_not_found(async_client: AsyncClient):
     assert resp.status_code == 404
 
 
+async def test_get_courses_by_ids(async_client: AsyncClient, course_factory):
+    course_a = await course_factory()
+    course_b = await course_factory()
+
+    resp = await async_client.post(
+        "/courses/by-ids",
+        json={"course_ids": [str(course_a.id), str(course_b.id), str(uuid4())]},
+    )
+    assert resp.status_code == 200
+    body = resp.json()
+    assert len(body["found"]) == 2
+    assert len(body["missing"]) == 1
+    assert set(item["id"] for item in body["found"]) == {
+        str(course_a.id),
+        str(course_b.id),
+    }
+
+
+async def test_get_courses_by_ids_empty_list(async_client: AsyncClient):
+    resp = await async_client.post(
+        "/courses/by-ids",
+        json={"course_ids": []},
+    )
+    assert resp.status_code == 422
+
+
+async def test_get_courses_by_ids_all_missing(async_client: AsyncClient):
+    fake_ids = [str(uuid4()), str(uuid4())]
+    resp = await async_client.post(
+        "/courses/by-ids",
+        json={"course_ids": fake_ids},
+    )
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["found"] == []
+    assert set(body["missing"]) == set(fake_ids)
+
+
+async def test_get_courses_by_ids_limit_exceeded(
+    async_client: AsyncClient,
+):
+    fake_ids = [str(uuid4()) for _ in range(101)]
+    resp = await async_client.post(
+        "/courses/by-ids",
+        json={"course_ids": fake_ids},
+    )
+    assert resp.status_code == 422
+
+
+async def test_get_courses_by_ids_invalid_uuid(
+    async_client: AsyncClient,
+):
+    resp = await async_client.post(
+        "/courses/by-ids",
+        json={"course_ids": ["not-a-uuid"]},
+    )
+    assert resp.status_code == 422
+
+
+async def test_get_courses_by_ids_duplicates(
+    async_client: AsyncClient,
+    course_factory,
+):
+    course = await course_factory()
+    course_id = str(course.id)
+
+    resp = await async_client.post(
+        "/courses/by-ids",
+        json={"course_ids": [course_id, course_id, course_id]},
+    )
+    assert resp.status_code == 200
+    body = resp.json()
+    assert len(body["found"]) == 1
+    assert body["missing"] == []
+
+
 async def test_create_course_unauthorized(
     async_client: AsyncClient,
     course_create_data_factory,
@@ -448,9 +524,7 @@ async def test_delete_section_not_found(
     user_owner,
 ):
     course = await course_factory(author_id=user_owner["id"])
-    resp = await auth_client_owner.delete(
-        f"/courses/{course.id}/sections/{uuid4()}"
-    )
+    resp = await auth_client_owner.delete(f"/courses/{course.id}/sections/{uuid4()}")
     assert resp.status_code == 404
 
 
@@ -498,9 +572,7 @@ async def test_list_lessons_pagination_total(
 
 
 async def test_list_lessons_course_not_found(async_client: AsyncClient):
-    resp = await async_client.get(
-        f"/courses/{uuid4()}/sections/{uuid4()}/lessons"
-    )
+    resp = await async_client.get(f"/courses/{uuid4()}/sections/{uuid4()}/lessons")
     assert resp.status_code == 404
 
 
