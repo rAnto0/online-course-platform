@@ -37,6 +37,24 @@ async def list_courses(
     return {"items": items, "total": total, "skip": skip, "limit": limit}
 
 
+@router.post(
+    "/by-ids",
+    response_model=sch_courses.CourseBatchResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Получить курсы по списку id",
+)
+async def get_courses_by_ids(
+    data: sch_courses.CourseBatchRequest,
+    course_service: CourseService = Depends(get_course_service),
+) -> sch_courses.CourseBatchResponse:
+    courses = await course_service.get_courses_by_ids(course_ids=data.course_ids)
+
+    found_ids = {course.id for course in courses}
+    missing_ids = [uid for uid in data.course_ids if uid not in found_ids]
+
+    return sch_courses.CourseBatchResponse(found=courses, missing=missing_ids)
+
+
 @router.get(
     "/{course_id}",
     response_model=sch_courses.CourseRead,
