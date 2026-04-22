@@ -30,22 +30,17 @@ export default function useDashboardData() {
           auth: true,
         })
         const safeEnrollments = normalizeCollection(enrollmentsData)
-        const enriched = await Promise.all(
-          safeEnrollments.map(async (enrollment) => {
-            try {
-              const course = await apiRequest(`/courses/${enrollment.course_id}`, {
-                method: 'GET',
-                auth: false,
-              })
-              return { ...enrollment, course, courseError: null }
-            } catch (enrollError) {
-              const message = enrollError?.status === 404
-                ? 'Курс удален или скрыт'
-                : 'Курс временно недоступен'
-              return { ...enrollment, course: null, courseError: message }
-            }
-          }),
-        )
+        const courseIds = safeEnrollments.map(e => e.course_id)
+        const batch = await apiRequest('/courses/by-ids', {
+          method: 'POST',
+          body: { course_ids: courseIds },
+        })
+        const coursesMap = new Map(batch.found.map(c => [c.id, c]))
+        const enriched = safeEnrollments.map(enrollment => ({
+          ...enrollment,
+          course: coursesMap.get(enrollment.course_id) || null,
+          courseError: coursesMap.has(enrollment.course_id) ? null : 'Курс удален или скрыт',
+        }))
         if (mounted) {
           setEnrollments(enriched)
         }
