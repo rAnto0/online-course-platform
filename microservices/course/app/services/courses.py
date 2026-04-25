@@ -5,6 +5,7 @@ from fastapi import Depends, HTTPException, status
 from sqlalchemy import func, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
 from app.core.database import get_async_session
 from app.models.categories import Category
@@ -57,6 +58,21 @@ class CourseService:
         """Возвращает курс по id или 404."""
         result = await self.session.execute(
             select(Course).where(Course.id == course_id)
+        )
+        course = result.scalar_one_or_none()
+        if course is None:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND, detail="Курс не найден"
+            )
+
+        return course
+
+    async def get_course_content_or_404(self, course_id: UUID) -> Course:
+        """Возвращает полное дерево данных курса по id или 404."""
+        result = await self.session.execute(
+            select(Course)
+            .where(Course.id == course_id)
+            .options(selectinload(Course.sections).selectinload(Section.lessons))
         )
         course = result.scalar_one_or_none()
         if course is None:

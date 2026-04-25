@@ -131,6 +131,14 @@ class LessonRead(BaseModel):
     model_config = {"from_attributes": True}
 
 
+class SectionContentRead(SectionRead):
+    lessons: list[LessonRead]
+
+
+class CourseContentRead(CourseRead):
+    sections: list[SectionContentRead]
+
+
 CourseListResponse = PaginatedResponse[CourseRead]
 SectionListResponse = PaginatedResponse[SectionRead]
 LessonListResponse = PaginatedResponse[LessonRead]

@@ -68,6 +68,19 @@ async def get_course(
     return await course_service.get_course_or_404(course_id=course_id)
 
 
+@router.get(
+    "/{course_id}/content",
+    response_model=sch_courses.CourseContentRead,
+    status_code=status.HTTP_200_OK,
+    summary="Получить полное дерево данных курса по id",
+)
+async def get_course_content(
+    course_id: UUID,
+    course_service: CourseService = Depends(get_course_service),
+):
+    return await course_service.get_course_content_or_404(course_id=course_id)
+
+
 @router.post(
     "/",
     response_model=sch_courses.CourseRead,
