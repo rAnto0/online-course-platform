@@ -35,8 +35,12 @@ export default function useCourseData(courseId) {
               method: 'GET',
               auth: true,
             })
-            setEnrollment(enrollmentData)
+            if (mounted) setEnrollment(enrollmentData)
+          } catch {
+            if (mounted) setEnrollment(null)
+          }
 
+          try {
             const allLessonIds = sectionsWithLessons.flatMap((s) => s.lessons.map((l) => l.id))
             const progressEntries = {}
 
@@ -56,7 +60,6 @@ export default function useCourseData(courseId) {
             if (mounted) setLessonProgress(progressEntries)
           } catch (err) {
             console.error('Ошибка загрузки прогресса:', err)
-            setEnrollment(null)
             if (mounted) setLessonProgress({})
           }
         } else if (mounted) {
