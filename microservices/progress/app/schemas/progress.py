@@ -76,3 +76,26 @@ class LessonProgressRead(LessonProgressBase):
     updated_at: datetime
 
     model_config = {"from_attributes": True}
+
+
+class LessonProgressBatchRequest(BaseModel):
+    lesson_ids: Annotated[
+        list[UUID],
+        Field(
+            ...,
+            min_length=1,
+            max_length=100,
+            description="Список ID уроков для получения информации о них",
+        ),
+    ]
+
+
+class LessonProgressBatchResponse(BaseModel):
+    found: Annotated[
+        list[LessonProgressRead],
+        Field(description="Список найденных уроков"),
+    ] = []
+    missing: Annotated[
+        list[UUID],
+        Field(description="Список ID уроков, для которых не была найдена информация"),
+    ] = []

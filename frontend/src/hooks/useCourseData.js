@@ -16,30 +16,15 @@ export default function useCourseData(courseId) {
     let mounted = true
     const load = async () => {
       try {
-        const courseData = await apiRequest(`/courses/${courseId}`, { method: 'GET', auth: false })
-        const [sectionsData, categoriesData] = await Promise.all([
-          apiRequest(`/courses/${courseId}/sections?skip=0&limit=10000`, {
-            method: 'GET',
-            auth: false,
-          }),
+        const [courseContent, categoriesData] = await Promise.all([
+          apiRequest(`/courses/${courseId}/content`, { method: 'GET', auth: false }),
           apiRequest('/categories', { method: 'GET', auth: false }),
         ])
 
-        const sectionResults = await Promise.allSettled(
-          normalizeCollection(sectionsData).map(async (section) => {
-            const lessons = await apiRequest(`/courses/${courseId}/sections/${section.id}/lessons?skip=0&limit=10000`, {
-              method: 'GET',
-              auth: false,
-            })
-            return { ...section, lessons: normalizeCollection(lessons) }
-          }),
-        )
-        const sectionsWithLessons = sectionResults
-          .filter((r) => r.status === 'fulfilled')
-          .map((r) => r.value)
-
         if (!mounted) return
-        setCourse(courseData)
+
+        const sectionsWithLessons = courseContent.sections || []
+        setCourse(courseContent)
         setSections(sectionsWithLessons)
         setCategories(normalizeCollection(categoriesData))
         setStatus('ready')
@@ -50,29 +35,32 @@ export default function useCourseData(courseId) {
               method: 'GET',
               auth: true,
             })
-            setEnrollment(enrollmentData)
+            if (mounted) setEnrollment(enrollmentData)
           } catch {
-            setEnrollment(null)
+            if (mounted) setEnrollment(null)
           }
 
-          const progressEntries = {}
-          await Promise.all(
-            sectionsWithLessons.flatMap((section) =>
-              section.lessons.map(async (lesson) => {
-                try {
-                  const lessonProgressData = await apiRequest(
-                    `/progress/lesson-progress/lessons/${lesson.id}`,
-                    { method: 'GET', auth: true },
-                  )
-                  progressEntries[lesson.id] = lessonProgressData
-                } catch {
-                  progressEntries[lesson.id] = null
-                }
-              }),
-            ),
-          )
-          if (mounted) {
-            setLessonProgress(progressEntries)
+          try {
+            const allLessonIds = sectionsWithLessons.flatMap((s) => s.lessons.map((l) => l.id))
+            const progressEntries = {}
+
+            if (allLessonIds.length > 0) {
+              const batchResponse = await apiRequest(`/progress/lesson-progress/lessons/by-ids`, {
+                method: 'POST',
+                auth: true,
+                body: { lesson_ids: allLessonIds },
+                contentType: 'application/json',
+              })
+
+              batchResponse.found.forEach((p) => {
+                progressEntries[p.lesson_id] = p
+              })
+            }
+
+            if (mounted) setLessonProgress(progressEntries)
+          } catch (err) {
+            console.error('Ошибка загрузки прогресса:', err)
+            if (mounted) setLessonProgress({})
           }
         } else if (mounted) {
           setEnrollment(null)
@@ -104,14 +92,15 @@ export default function useCourseData(courseId) {
   const progressPercent = totalLessons === 0 ? 0 : Math.round((completedLessons / totalLessons) * 100)
 
   const lastCompletedLessonId = useMemo(() => {
-    return sections.flatMap((section) => section.lessons)
+    return sections
+      .flatMap((section) => section.lessons)
       .reduceRight((lastId, lesson) => {
         if (lastId) return lastId
         return lessonProgress[lesson.id]?.status === 'COMPLETED' ? lesson.id : null
       }, null)
   }, [sections, lessonProgress])
 
-  // Upsert course progress
+  // Обновление прогресса курса
   const lastSentRef = useRef({ course_id: null, total_lessons: 0, progress_percent: -1, last_lesson_id: null })
   useEffect(() => {
     lastSentRef.current = { course_id: null, total_lessons: 0, progress_percent: -1, last_lesson_id: null }
@@ -123,10 +112,10 @@ export default function useCourseData(courseId) {
       const sent = lastSentRef.current
       const isSameCourse = sent.course_id === courseId
       if (
-        isSameCourse
-        && sent.total_lessons === totalLessons
-        && sent.progress_percent === progressPercent
-        && sent.last_lesson_id === lastCompletedLessonId
+        isSameCourse &&
+        sent.total_lessons === totalLessons &&
+        sent.progress_percent === progressPercent &&
+        sent.last_lesson_id === lastCompletedLessonId
       ) return
       sent.course_id = courseId
       sent.total_lessons = totalLessons
@@ -143,7 +132,7 @@ export default function useCourseData(courseId) {
           },
         })
       } catch (err) {
-        if (mounted) console.warn('Course progress upsert warning:', err)
+        if (mounted) console.warn('Предупреждение при обновлении прогресса курса:', err)
       }
     }
     const timer = setTimeout(() => upsert(), 500)
@@ -153,7 +142,7 @@ export default function useCourseData(courseId) {
     }
   }, [courseId, enrollment, totalLessons, progressPercent, lastCompletedLessonId])
 
-  // Auto-complete enrollment
+  // Автозавершение записи на курс
   useEffect(() => {
     let mounted = true
     const finalize = async () => {
@@ -167,7 +156,7 @@ export default function useCourseData(courseId) {
         })
         if (mounted) setEnrollment(updated)
       } catch (err) {
-        if (mounted) console.warn('Course completion warning:', err)
+        if (mounted) console.warn('Предупреждение при завершении курса:', err)
       }
     }
     finalize()

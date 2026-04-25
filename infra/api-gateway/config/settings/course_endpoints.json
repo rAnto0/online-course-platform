@@ -57,6 +57,12 @@
             "backend_pattern": "/courses/{course_id}"
         },
         {
+            "type": "unprotected",
+            "endpoint_path": "/courses/{course_id}/content",
+            "method": "GET",
+            "backend_pattern": "/courses/{course_id}/content"
+        },
+        {
             "type": "secure",
             "endpoint_path": "/courses",
             "method": "POST",

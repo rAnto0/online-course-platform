@@ -109,6 +109,47 @@ async def test_get_courses_by_ids_duplicates(
     assert body["missing"] == []
 
 
+async def test_get_course_content_success(
+    async_client: AsyncClient,
+    course_factory,
+    section_factory,
+    lesson_factory,
+):
+    course = await course_factory()
+    section = await section_factory(course_id=course.id)
+    await lesson_factory(section_id=section.id)
+
+    resp = await async_client.get(f"/courses/{course.id}/content")
+
+    assert resp.status_code == 200
+    data = resp.json()
+
+    assert data["id"] == str(course.id)
+    assert len(data["sections"]) == 1
+    assert data["sections"][0]["id"] == str(section.id)
+    assert len(data["sections"][0]["lessons"]) == 1
+    assert data["sections"][0]["lessons"][0]["id"] != None
+
+
+async def test_get_course_content_not_found(async_client: AsyncClient):
+    resp = await async_client.get(f"/courses/{uuid4()}/content")
+    assert resp.status_code == 404
+
+
+async def test_get_course_content_empty_structure(
+    async_client: AsyncClient,
+    course_factory,
+):
+    course = await course_factory()
+
+    resp = await async_client.get(f"/courses/{course.id}/content")
+
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["id"] == str(course.id)
+    assert data["sections"] == []
+
+
 async def test_create_course_unauthorized(
     async_client: AsyncClient,
     course_create_data_factory,
