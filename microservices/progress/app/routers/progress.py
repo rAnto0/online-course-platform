@@ -131,6 +131,30 @@ async def upsert_course_progress(
 
 
 # --- Lesson Progress ---
+@router.post(
+    "/lesson-progress/lessons/by-ids",
+    response_model=sch_progress.LessonProgressBatchResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Получить прогресс уроков по списку id",
+)
+async def get_lesson_progress_by_ids(
+    data: sch_progress.LessonProgressBatchRequest,
+    user_id: UUID = Header(..., alias="X-User-Id"),
+    progress_service: ProgressService = Depends(get_progress_service),
+):
+    lessons = await progress_service.get_lesson_progress_by_ids(
+        user_id=user_id,
+        lesson_ids=data.lesson_ids,
+    )
+
+    found_ids = {lesson.lesson_id for lesson in lessons}
+    missing_ids = [
+        lesson_id for lesson_id in data.lesson_ids if lesson_id not in found_ids
+    ]
+
+    return sch_progress.LessonProgressBatchResponse(found=lessons, missing=missing_ids)
+
+
 @router.get(
     "/lesson-progress/lessons/{lesson_id}",
     response_model=sch_progress.LessonProgressRead,

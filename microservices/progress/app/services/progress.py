@@ -82,7 +82,9 @@ class ProgressService:
 
         return enrollment
 
-    async def create_enrollment(self, data: EnrollmentCreate, user_id: UUID) -> Enrollment:
+    async def create_enrollment(
+        self, data: EnrollmentCreate, user_id: UUID
+    ) -> Enrollment:
         status_value = data.status or EnrollmentStatus.ACTIVE
         enrollment = Enrollment(
             user_id=user_id,
@@ -189,6 +191,18 @@ class ProgressService:
         return course_progress
 
     # --- Lesson Progress ---
+    async def get_lesson_progress_by_ids(
+        self, user_id: UUID, lesson_ids: list[UUID]
+    ) -> Sequence[LessonProgress]:
+        result = await self.session.execute(
+            select(LessonProgress).where(
+                LessonProgress.user_id == user_id,
+                LessonProgress.lesson_id.in_(lesson_ids),
+            )
+        )
+
+        return result.scalars().all()
+
     async def get_lesson_progress_or_404(
         self,
         user_id: UUID,
