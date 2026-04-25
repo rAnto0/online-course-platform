@@ -52,6 +52,12 @@
         },
         {
             "type": "secure",
+            "endpoint_path": "/progress/lesson-progress/lessons/by-ids",
+            "method": "POST",
+            "backend_pattern": "/progress/lesson-progress/lessons/by-ids"
+        },
+        {
+            "type": "secure",
             "endpoint_path": "/progress/lesson-progress/lessons/{lesson_id}",
             "method": "GET",
             "backend_pattern": "/progress/lesson-progress/lessons/{lesson_id}"
