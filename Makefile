@@ -2,7 +2,7 @@ COMPOSE_DEV = docker compose --env-file .env.dev -f docker-compose.yaml -f docke
 MIGRATE_SERVICES = auth-service course-service progress-service
 PYTEST_ARGS ?= -q --disable-warnings -r fE
 
-.PHONY: run-dev down-dev build-dev logs-dev shell-service-dev test test-auth auth-test-db test-course course-test-db test-gateway env-init keys-init migrate seed-courses
+.PHONY: run-dev down-dev build-dev logs-dev shell-service-dev test test-auth auth-test-db test-course course-test-db test-progress progress-test-db test-gateway env-init keys-init migrate seed-courses
 
 # =======
 # HELPERS
@@ -55,7 +55,7 @@ endif
 # =============
 # TEST COMMANDS
 # =============
-test: test-auth test-course
+test: test-auth test-course test-progress
 
 test-gateway:
 	@echo "Running gateway tests..."
@@ -74,3 +74,10 @@ test-course: course-test-db
 
 course-test-db:
 	$(call ensure_db,course_db_test)
+
+test-progress: progress-test-db
+	@echo "Running progress-service tests..."
+	@$(COMPOSE_DEV) exec -T progress-service pytest $(PYTEST_ARGS)
+
+progress-test-db:
+	$(call ensure_db,progress_db_test)
