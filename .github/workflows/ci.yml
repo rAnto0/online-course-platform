@@ -42,7 +42,7 @@ jobs:
 
       - name: Start required services
         run: |
-          docker compose --env-file .env.dev -f docker-compose.yaml -f docker-compose.dev.yaml up -d postgres rabbitmq auth-service course-service
+          docker compose --env-file .env.dev -f docker-compose.yaml -f docker-compose.dev.yaml up -d postgres rabbitmq auth-service course-service progress-service
 
       - name: Wait for PostgreSQL
         run: |
